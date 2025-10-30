@@ -1,0 +1,438 @@
+/* ==============================
+   تنسيقات قسم الخدمات المحسّن
+   ============================== */
+
+/* خلفية القسم */
+.services {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(245, 166, 35, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s ease-in-out infinite;
+}
+
+.services::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(46, 74, 98, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+/* شبكة الخدمات المحسنة */
+.services-grid-enhanced {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    position: relative;
+    z-index: 2;
+}
+
+/* بطاقة الخدمة المحسنة */
+.service-card-enhanced {
+    background: var(--white);
+    padding: 45px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* خط علوي ملون */
+.service-card-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+}
+
+.service-card-enhanced:hover::before {
+    transform: scaleX(1);
+}
+
+/* دائرة خلفية ديناميكية */
+.service-card-enhanced::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.05), rgba(46, 74, 98, 0.05));
+    transform: translate(-50%, -50%);
+    transition: width 0.8s ease, height 0.8s ease;
+    z-index: -1;
+}
+
+.service-card-enhanced:hover::after {
+    width: 500px;
+    height: 500px;
+}
+
+.service-card-enhanced:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 25px 60px rgba(245, 166, 35, 0.25);
+}
+
+/* حاوية الأيقونة */
+.service-icon-enhanced {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    background: linear-gradient(135deg, var(--accent-color), #D98E19);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(245, 166, 35, 0.4);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير موجي داخل الأيقونة */
+.service-icon-enhanced::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%) rotate(45deg);
+    transition: transform 0.6s ease;
+}
+
+.service-card-enhanced:hover .service-icon-enhanced::before {
+    transform: translateX(100%) rotate(45deg);
+}
+
+.service-icon-enhanced i {
+    color: var(--white);
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+.service-card-enhanced:hover .service-icon-enhanced {
+    transform: rotateY(360deg) scale(1.1);
+    box-shadow: 0 15px 40px rgba(245, 166, 35, 0.6);
+}
+
+.service-card-enhanced:hover .service-icon-enhanced i {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* رقم الخدمة */
+.service-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), rgba(46, 74, 98, 0.8));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(46, 74, 98, 0.3);
+    transition: all 0.4s ease;
+}
+
+.service-card-enhanced:hover .service-number {
+    transform: scale(1.2) rotate(360deg);
+    background: linear-gradient(135deg, var(--accent-color), #D98E19);
+}
+
+/* عنوان الخدمة */
+.service-title-enhanced {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.service-card-enhanced:hover .service-title-enhanced {
+    color: var(--accent-color);
+}
+
+/* وصف الخدمة */
+.service-description-enhanced {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    transition: color 0.3s ease;
+}
+
+.service-card-enhanced:hover .service-description-enhanced {
+    color: var(--text-primary);
+}
+
+/* مميزات الخدمة */
+.service-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.service-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, rgba(245, 166, 35, 0.08), transparent);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    transform: translateX(-10px);
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
+}
+
+.service-card-enhanced:nth-child(1) .service-feature-item:nth-child(1) { animation-delay: 0.1s; }
+.service-card-enhanced:nth-child(1) .service-feature-item:nth-child(2) { animation-delay: 0.2s; }
+.service-card-enhanced:nth-child(1) .service-feature-item:nth-child(3) { animation-delay: 0.3s; }
+.service-card-enhanced:nth-child(2) .service-feature-item:nth-child(1) { animation-delay: 0.2s; }
+.service-card-enhanced:nth-child(2) .service-feature-item:nth-child(2) { animation-delay: 0.3s; }
+.service-card-enhanced:nth-child(2) .service-feature-item:nth-child(3) { animation-delay: 0.4s; }
+.service-card-enhanced:nth-child(3) .service-feature-item:nth-child(1) { animation-delay: 0.3s; }
+.service-card-enhanced:nth-child(3) .service-feature-item:nth-child(2) { animation-delay: 0.4s; }
+.service-card-enhanced:nth-child(3) .service-feature-item:nth-child(3) { animation-delay: 0.5s; }
+.service-card-enhanced:nth-child(4) .service-feature-item:nth-child(1) { animation-delay: 0.4s; }
+.service-card-enhanced:nth-child(4) .service-feature-item:nth-child(2) { animation-delay: 0.5s; }
+.service-card-enhanced:nth-child(4) .service-feature-item:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.service-feature-item:hover {
+    background: linear-gradient(90deg, rgba(245, 166, 35, 0.15), rgba(245, 166, 35, 0.05));
+    transform: translateX(5px);
+}
+
+.service-feature-item i {
+    font-size: 16px;
+    color: var(--accent-color);
+    min-width: 20px;
+}
+
+.service-feature-item span {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* زر الخدمة */
+.service-btn-enhanced {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--primary-color), rgba(46, 74, 98, 0.9));
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 20px rgba(46, 74, 98, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-btn-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--accent-color);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.service-btn-enhanced:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.service-btn-enhanced span,
+.service-btn-enhanced i {
+    position: relative;
+    z-index: 2;
+}
+
+.service-btn-enhanced:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(245, 166, 35, 0.4);
+}
+
+.service-btn-enhanced i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.service-btn-enhanced:hover i {
+    transform: translateX(-5px);
+}
+
+/* تأثيرات الجسيمات */
+.service-card-enhanced .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.service-card-enhanced .particles span {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 3s ease-in-out infinite;
+}
+
+.service-card-enhanced:hover .particles span {
+    opacity: 0.6;
+}
+
+.service-card-enhanced .particles span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.service-card-enhanced .particles span:nth-child(2) { left: 30%; animation-delay: 0.5s; }
+.service-card-enhanced .particles span:nth-child(3) { left: 50%; animation-delay: 1s; }
+.service-card-enhanced .particles span:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.service-card-enhanced .particles span:nth-child(5) { left: 90%; animation-delay: 2s; }
+
+@keyframes particleFloat {
+    0% {
+        bottom: 0;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        bottom: 100%;
+        transform: translateX(0);
+    }
+}
+
+/* إحصائيات الخدمة */
+.service-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(245, 166, 35, 0.2);
+}
+
+.stat-item-small {
+    text-align: center;
+}
+
+.stat-item-small .stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-item-small .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 992px) {
+    .services-grid-enhanced {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .service-card-enhanced {
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid-enhanced {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-icon-enhanced {
+        width: 80px;
+        height: 80px;
+        font-size: 35px;
+    }
+    
+    .service-title-enhanced {
+        font-size: 1.4rem;
+    }
+    
+    .service-description-enhanced {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card-enhanced {
+        padding: 30px 20px;
+    }
+    
+    .service-number {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}

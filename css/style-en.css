@@ -1,0 +1,95 @@
+/* ==============================
+   English Version Styles
+   Based on main style.css with LTR adjustments
+   ============================== */
+@import url('style.css');
+
+/* Override RTL to LTR */
+body {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Header adjustments for LTR */
+.header-content {
+    flex-direction: row;
+}
+
+.logo {
+    order: 1;
+}
+
+.nav {
+    order: 2;
+}
+
+.header-actions {
+    order: 3;
+}
+
+/* Navigation links alignment */
+.nav-list {
+    flex-direction: row;
+}
+
+/* Contact info alignment */
+.contact-item {
+    text-align: left;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+/* Footer links alignment */
+.footer-links {
+    text-align: left;
+}
+
+/* Slider buttons reversed for LTR */
+.prev-btn {
+    order: 1;
+}
+
+.next-btn {
+    order: 2;
+}
+
+/* Dev details alignment */
+.dev-details {
+    text-align: left;
+}
+
+.dev-details p {
+    justify-content: flex-start;
+}
+
+/* WhatsApp float position for LTR */
+.whatsapp-float {
+    left: auto;
+    right: 30px;
+}
+
+/* Mobile menu position for LTR */
+@media (max-width: 992px) {
+    .nav {
+        right: auto;
+        left: -100%;
+    }
+    
+    .nav.active {
+        left: 0;
+        right: auto;
+    }
+    
+    .nav-list {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        right: 20px;
+        left: auto;
+    }
+}

@@ -1,0 +1,478 @@
+/* ==============================
+   تنسيقات قسم المشاريع المحسّن
+   ============================== */
+
+/* خلفية القسم */
+.projects {
+    background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.projects::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(46, 74, 98, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* السلايدر المحسّن */
+.projects-slider-enhanced {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* حاوية الشرائح */
+.projects-slides-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* الشريحة المحسنة */
+.project-slide-enhanced {
+    display: none;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.12);
+    transition: all 0.5s ease;
+}
+
+.project-slide-enhanced.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    animation: slideIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* قسم الصورة */
+.project-image-enhanced {
+    position: relative;
+    min-height: 450px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-image-enhanced::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.project-image-enhanced i {
+    font-size: 150px;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 2;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* شارة المشروع */
+.project-badge-enhanced {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    color: var(--primary-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    animation: pulse 2s infinite;
+}
+
+/* قسم المحتوى */
+.project-content-enhanced {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+    position: relative;
+}
+
+.project-content-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-color), var(--primary-color));
+}
+
+/* رقم المشروع */
+.project-number {
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(245, 166, 35, 0.1);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/* عنوان المشروع */
+.project-title-enhanced {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.3;
+    position: relative;
+}
+
+.project-title-enhanced::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* وصف المشروع */
+.project-description-enhanced {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+/* تفاصيل المشروع */
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.project-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.08), rgba(46, 74, 98, 0.05));
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.project-detail-item:hover {
+    transform: translateX(-5px);
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.15), rgba(46, 74, 98, 0.08));
+}
+
+.project-detail-item i {
+    font-size: 24px;
+    color: var(--accent-color);
+    min-width: 30px;
+}
+
+.project-detail-item .detail-content {
+    flex: 1;
+}
+
+.project-detail-item .detail-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 3px;
+}
+
+.project-detail-item .detail-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* إحصائيات المشروع */
+.project-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 25px 0;
+    border-top: 2px solid rgba(245, 166, 35, 0.2);
+    border-bottom: 2px solid rgba(245, 166, 35, 0.2);
+    margin-bottom: 30px;
+}
+
+.project-stat {
+    text-align: center;
+}
+
+.project-stat-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--accent-color);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.project-stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* زر المشروع */
+.project-btn-enhanced {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, var(--accent-color), #D98E19);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(245, 166, 35, 0.35);
+    position: relative;
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+.project-btn-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-btn-enhanced:hover::before {
+    left: 100%;
+}
+
+.project-btn-enhanced:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(245, 166, 35, 0.5);
+}
+
+.project-btn-enhanced i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.project-btn-enhanced:hover i {
+    transform: translateX(-5px);
+}
+
+/* أزرار التحكم المحسنة */
+.slider-controls-enhanced {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.slider-btn-enhanced {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 20px rgba(245, 166, 35, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-btn-enhanced::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+}
+
+.slider-btn-enhanced:hover::before {
+    opacity: 1;
+}
+
+.slider-btn-enhanced i {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.slider-btn-enhanced:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 30px rgba(245, 166, 35, 0.4);
+}
+
+.slider-btn-enhanced:hover i {
+    color: var(--white);
+}
+
+.slider-btn-enhanced:active {
+    transform: scale(1.05);
+}
+
+/* مؤشرات الشرائح */
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.slider-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(245, 166, 35, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-indicator.active {
+    width: 40px;
+    border-radius: 6px;
+    background: var(--accent-color);
+}
+
+.slider-indicator:hover {
+    background: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* شريط التقدم */
+.project-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(245, 166, 35, 0.2);
+    overflow: hidden;
+}
+
+.project-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    width: 0;
+    animation: progressBar 5s linear;
+}
+
+@keyframes progressBar {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 992px) {
+    .project-slide-enhanced.active {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-image-enhanced {
+        min-height: 300px;
+    }
+    
+    .project-image-enhanced i {
+        font-size: 100px;
+    }
+    
+    .project-content-enhanced {
+        padding: 35px;
+    }
+    
+    .project-number {
+        font-size: 4rem;
+    }
+    
+    .project-title-enhanced {
+        font-size: 1.8rem;
+    }
+    
+    .project-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-image-enhanced {
+        min-height: 250px;
+    }
+    
+    .project-content-enhanced {
+        padding: 25px;
+    }
+    
+    .project-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .slider-btn-enhanced {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-number {
+        font-size: 3rem;
+    }
+    
+    .project-title-enhanced {
+        font-size: 1.5rem;
+    }
+    
+    .project-description-enhanced {
+        font-size: 1rem;
+    }
+    
+    .project-stat-value {
+        font-size: 2rem;
+    }
+}

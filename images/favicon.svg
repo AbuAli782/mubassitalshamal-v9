@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- خلفية ذهبية -->
+  <circle cx="50" cy="50" r="50" fill="#F5A623"/>
+  
+  <!-- دائرة داخلية داكنة -->
+  <circle cx="50" cy="50" r="42" fill="#1a1a2e"/>
+  
+  <!-- حرف "م" بالعربي أو رمز البناء -->
+  <g fill="#F5A623" stroke="#FFD700" stroke-width="1.5">
+    <!-- مربعات تمثل البلك/الطوب -->
+    <rect x="30" y="35" width="15" height="12" rx="1"/>
+    <rect x="48" y="35" width="15" height="12" rx="1"/>
+    <rect x="66" y="35" width="15" height="12" rx="1"/>
+    
+    <rect x="30" y="50" width="15" height="12" rx="1"/>
+    <rect x="48" y="50" width="15" height="12" rx="1"/>
+    <rect x="66" y="50" width="15" height="12" rx="1"/>
+    
+    <rect x="39" y="65" width="15" height="12" rx="1"/>
+    <rect x="57" y="65" width="15" height="12" rx="1"/>
+  </g>
+  
+  <!-- خط ذهبي علوي -->
+  <path d="M 20 28 L 80 28" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+</svg>

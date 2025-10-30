@@ -1,0 +1,497 @@
+/* ==============================
+   تأثيرات المنتجات - متطورة وجميلة
+   ============================== */
+
+/* البطاقة الرئيسية */
+.product-card-enhanced {
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+/* خط علوي ملون متدرج */
+.product-card-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #F5A623, #FFD700, #F5A623);
+    background-size: 200% 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-radius: 20px 20px 0 0;
+    z-index: 10;
+    animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.product-card-enhanced:hover::before {
+    transform: scaleX(1);
+}
+
+/* توهج خلفي جميل */
+.product-card-enhanced::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 22px;
+    background: linear-gradient(45deg, 
+        rgba(245, 166, 35, 0.4),
+        rgba(255, 215, 0, 0.4),
+        rgba(245, 166, 35, 0.4));
+    background-size: 300% 300%;
+    opacity: 0;
+    z-index: -1;
+    filter: blur(20px);
+    transition: opacity 0.6s ease;
+    animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.product-card-enhanced:hover::after {
+    opacity: 1;
+}
+
+/* تأثير الرفع مع دوران خفيف */
+.product-card-enhanced:hover {
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 0 30px 70px rgba(245, 166, 35, 0.35),
+                0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* رقم المنتج - متحرك ومميز */
+.product-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #2E4A62, #1a2e42);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(46, 74, 98, 0.4),
+                inset 0 -2px 5px rgba(0,0,0,0.3);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10;
+    border: 3px solid rgba(245, 166, 35, 0.3);
+}
+
+.product-card-enhanced:hover .product-number {
+    transform: scale(1.3) rotate(360deg);
+    background: linear-gradient(135deg, #F5A623, #FFD700);
+    box-shadow: 0 12px 30px rgba(245, 166, 35, 0.6),
+                inset 0 -2px 5px rgba(0,0,0,0.2);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* الشريط الأنيق تحت الرقم */
+.product-number-line {
+    position: absolute;
+    top: 82px;
+    right: 15px;
+    width: 65px;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(245, 166, 35, 0.3),
+        rgba(245, 166, 35, 0.8),
+        rgba(255, 215, 0, 0.8),
+        rgba(245, 166, 35, 0.8),
+        rgba(245, 166, 35, 0.3),
+        transparent);
+    border-radius: 10px;
+    z-index: 9;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0.7;
+    box-shadow: 0 2px 8px rgba(245, 166, 35, 0.4);
+}
+
+/* تأثير الشريط عند التمرير */
+.product-card-enhanced:hover .product-number-line {
+    width: 75px;
+    height: 5px;
+    opacity: 1;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(245, 166, 35, 0.5),
+        rgba(245, 166, 35, 1),
+        rgba(255, 215, 0, 1),
+        rgba(245, 166, 35, 1),
+        rgba(245, 166, 35, 0.5),
+        transparent);
+    box-shadow: 0 3px 15px rgba(245, 166, 35, 0.6),
+                0 0 20px rgba(255, 215, 0, 0.4);
+    animation: line-pulse 1.5s ease-in-out infinite;
+}
+
+/* أنميشن نبض الشريط */
+@keyframes line-pulse {
+    0%, 100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scaleX(1.1);
+        opacity: 0.9;
+    }
+}
+
+/* إخفاء تأثير الشرارات */
+.sparkle-effect {
+    display: none;
+}
+
+/* الشارات - جذابة ومتحركة */
+.product-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 5;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.product-badge.bestseller {
+    background: linear-gradient(135deg, #FF6B6B, #FF4757, #FF6B6B);
+    background-size: 200% 200%;
+    box-shadow: 0 6px 20px rgba(255, 75, 87, 0.5);
+    animation: badgePulse 2s ease-in-out infinite, gradientShift 3s ease infinite;
+}
+
+.product-badge.badge-premium {
+    background: linear-gradient(135deg, #9B59B6, #8E44AD, #9B59B6);
+    background-size: 200% 200%;
+    box-shadow: 0 6px 20px rgba(155, 89, 182, 0.5);
+    animation: badgePulse 2s ease-in-out infinite, gradientShift 3s ease infinite;
+}
+
+.product-badge.badge-new {
+    background: linear-gradient(135deg, #3498DB, #2980B9, #3498DB);
+    background-size: 200% 200%;
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+    animation: badgePulse 2s ease-in-out infinite, gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.product-card-enhanced:hover .product-badge {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(245, 166, 35, 0.6);
+}
+
+/* تأثير الصورة - واضحة وجميلة */
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.product-image {
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: brightness(1) contrast(1.05);
+}
+
+.product-card-enhanced:hover .product-image {
+    transform: scale(1.15) rotate(2deg);
+    filter: brightness(1.1) contrast(1.1) saturate(1.2);
+}
+
+/* إزالة الـ overlay المخفي للصورة - إضافة إطار متوهج فقط */
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none;
+    border: 3px solid transparent;
+    border-radius: 15px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.product-card-enhanced:hover .product-overlay {
+    opacity: 1;
+    border-color: rgba(245, 166, 35, 0.6);
+    box-shadow: inset 0 0 30px rgba(245, 166, 35, 0.2),
+                0 0 20px rgba(245, 166, 35, 0.4);
+}
+
+.overlay-content {
+    display: none;
+}
+
+/* العنوان - متحرك وجذاب */
+.product-title-enhanced {
+    color: var(--primary-color);
+    transition: all 0.4s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.product-card-enhanced:hover .product-title-enhanced {
+    color: var(--accent-color);
+    transform: translateX(5px);
+    text-shadow: 2px 2px 8px rgba(245, 166, 35, 0.3);
+}
+
+.product-title-enhanced i {
+    color: var(--accent-color);
+    margin-left: 8px;
+    transition: all 0.4s ease;
+    display: inline-block;
+}
+
+.product-card-enhanced:hover .product-title-enhanced i {
+    transform: rotate(360deg) scale(1.2);
+    color: #FFD700;
+}
+
+/* تحسين المواصفات - جذابة */
+.product-specs {
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.08), rgba(255, 215, 0, 0.05));
+    border: 2px solid rgba(245, 166, 35, 0.25);
+    border-radius: 12px;
+    padding: 15px;
+    transition: all 0.4s ease;
+}
+
+.product-card-enhanced:hover .product-specs {
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.15), rgba(255, 215, 0, 0.1));
+    border-color: rgba(245, 166, 35, 0.5);
+    box-shadow: 0 5px 20px rgba(245, 166, 35, 0.2);
+}
+
+.spec-item {
+    background: white;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+.spec-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(245, 166, 35, 0.3);
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.1), rgba(255, 255, 255, 1));
+}
+
+.spec-item i {
+    color: var(--accent-color);
+    transition: all 0.4s ease;
+}
+
+.spec-item:hover i {
+    transform: scale(1.3) rotate(360deg);
+    color: #FFD700;
+}
+
+/* تحسين الميزات - متحركة */
+.feature-tag {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.feature-tag:hover::before {
+    left: 100%;
+}
+
+.feature-tag:hover {
+    transform: translateX(5px) translateY(-2px) scale(1.05);
+    background: linear-gradient(135deg, var(--accent-color), #FFD700);
+    color: white;
+    box-shadow: 0 5px 15px rgba(245, 166, 35, 0.4);
+}
+
+.feature-tag:hover i {
+    color: white;
+    transform: rotate(360deg);
+}
+
+/* زر الطلب - مميز جداً */
+.product-btn-enhanced {
+    position: relative;
+    background: linear-gradient(135deg, #F5A623, #FFD700, #F5A623);
+    background-size: 200% 200%;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(245, 166, 35, 0.4);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: buttonGradient 3s ease infinite;
+}
+
+@keyframes buttonGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.product-btn-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.product-btn-enhanced:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.product-btn-enhanced::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: buttonShine 3s infinite;
+}
+
+@keyframes buttonShine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.product-btn-enhanced span,
+.product-btn-enhanced i {
+    position: relative;
+    z-index: 2;
+}
+
+.product-btn-enhanced:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(245, 166, 35, 0.6),
+                0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-btn-enhanced i {
+    transition: all 0.4s ease;
+}
+
+.product-btn-enhanced:hover i {
+    transform: translateX(-8px) rotate(-10deg) scale(1.2);
+}
+
+/* إزالة التأثيرات المعقدة */
+
+/* إخفاء العناصر غير المطلوبة */
+.product-rating,
+.stock-indicator,
+.price-section {
+    display: none !important;
+}
+
+/* تعديل موضع الزر */
+.product-btn-enhanced {
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* تحسين الوصف */
+.product-description-enhanced {
+    transition: all 0.4s ease;
+}
+
+.product-card-enhanced:hover .product-description-enhanced {
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* تحسين المسافات */
+.product-content {
+    padding: 25px;
+    position: relative;
+    z-index: 2;
+    background: white;
+    transition: all 0.4s ease;
+}
+
+.product-card-enhanced:hover .product-content {
+    background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(245,166,35,0.03));
+}
+
+/* تأثير التموج عند النقر */
+.product-card-enhanced:active {
+    transform: translateY(-15px) scale(1.02);
+}
+
+/* تأثيرات إضافية جميلة */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.product-card-enhanced {
+    animation: float 6s ease-in-out infinite;
+}
+
+.product-card-enhanced:nth-child(2n) {
+    animation-delay: 1s;
+}
+
+.product-card-enhanced:nth-child(3n) {
+    animation-delay: 2s;
+}
+
+.product-card-enhanced:hover {
+    animation: none;
+}

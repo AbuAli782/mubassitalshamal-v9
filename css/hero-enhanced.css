@@ -1,0 +1,656 @@
+/* ==============================
+   تنسيقات قسم العرض الرئيسي المحسّن
+   ============================== */
+
+/* القسم الرئيسي */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* الخلفية المتحركة */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(245, 166, 35, 0.1) 0%, transparent 70%);
+    animation: rotateBackground 30s linear infinite;
+}
+
+@keyframes rotateBackground {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(245, 166, 35, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(46, 74, 98, 0.2) 0%, transparent 50%);
+}
+
+/* الطبقة الداكنة */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(15, 52, 96, 0.6) 100%);
+    z-index: 1;
+}
+
+/* المحتوى الرئيسي */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+/* العنوان الرئيسي المحسّن */
+.hero-title-enhanced {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title-enhanced::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    border-radius: 3px;
+}
+
+.hero-title-enhanced .highlight {
+    background: linear-gradient(135deg, var(--accent-color), #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+/* مؤشر الكتابة المتحرك */
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: var(--accent-color);
+    margin-right: 5px;
+    animation: blink-cursor 0.8s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink-cursor {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* العنوان الفرعي المحسّن */
+.hero-subtitle-enhanced {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-shadow: 0 3px 10px rgba(245, 166, 35, 0.4);
+    letter-spacing: 1px;
+}
+
+/* الوصف المحسّن */
+.hero-description-enhanced {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* المميزات السريعة */
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 1px solid rgba(245, 166, 35, 0.3);
+    transition: all 0.4s ease;
+}
+
+.hero-feature-item:hover {
+    background: rgba(245, 166, 35, 0.15);
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(245, 166, 35, 0.3);
+}
+
+.hero-feature-item i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.hero-feature-item span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+/* الأزرار المحسنة */
+.hero-buttons-enhanced {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.hero-btn:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.hero-btn i {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.hero-btn:hover i {
+    transform: translateX(-5px);
+}
+
+.hero-btn.primary {
+    background: linear-gradient(135deg, var(--accent-color), #D98E19);
+    color: var(--white);
+    border: 2px solid var(--accent-color);
+}
+
+.hero-btn.primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(245, 166, 35, 0.5);
+}
+
+.hero-btn.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+}
+
+/* الأزرار الفخمة الجديدة */
+.hero-btn-luxury {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 45px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 60px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* خلفية الزر المتحركة */
+.btn-bg-animation {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, 
+        rgba(245, 166, 35, 0.1) 0%, 
+        rgba(212, 175, 55, 0.1) 50%, 
+        rgba(255, 215, 0, 0.1) 100%);
+    animation: gradient-shift 3s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { transform: translateX(-10%) rotate(0deg); }
+    50% { transform: translateX(10%) rotate(5deg); }
+}
+
+/* توهج الزر */
+.btn-shine {
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+    transform: skewX(-25deg);
+    transition: left 0.7s ease;
+}
+
+.hero-btn-luxury:hover .btn-shine {
+    left: 200%;
+}
+
+/* النص والأيقونة */
+.btn-text {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.btn-icon {
+    font-size: 1.4rem;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 2;
+}
+
+/* الزر الأساسي (Primary) */
+.hero-btn-luxury.primary {
+    background: linear-gradient(135deg, 
+        var(--accent-color) 0%, 
+        #D98E19 50%, 
+        #FFD700 100%);
+    background-size: 200% 200%;
+    color: var(--white);
+    border: 2px solid var(--accent-color);
+    animation: gradient-move 4s ease infinite;
+}
+
+@keyframes gradient-move {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-btn-luxury.primary:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 
+        0 20px 50px rgba(245, 166, 35, 0.6),
+        0 0 30px rgba(245, 166, 35, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+    border-color: #FFD700;
+}
+
+.hero-btn-luxury.primary:hover .btn-icon {
+    transform: translateX(-8px) rotate(-15deg);
+}
+
+.hero-btn-luxury.primary:hover .btn-text {
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* الزر الثانوي (Secondary) */
+.hero-btn-luxury.secondary {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-btn-luxury.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 
+        0 20px 50px rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.hero-btn-luxury.secondary:hover .btn-icon {
+    transform: translateX(8px) rotate(15deg);
+}
+
+.hero-btn-luxury.secondary:hover .btn-text {
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* تأثير الضغط */
+.hero-btn-luxury:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* مؤشر التمرير */
+.scroll-indicator-enhanced {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.scroll-indicator-enhanced a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator-enhanced a:hover {
+    transform: translateY(5px);
+}
+
+.scroll-indicator-enhanced span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator-enhanced i {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* مؤشر التمرير الفخم الجديد */
+.scroll-indicator-luxury {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.scroll-link-luxury {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.scroll-link-luxury:hover {
+    transform: translateY(8px);
+}
+
+/* الدائرة المتحركة */
+.scroll-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(245, 166, 35, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(245, 166, 35, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.5s ease;
+    box-shadow: 
+        0 0 20px rgba(245, 166, 35, 0.2),
+        inset 0 0 20px rgba(245, 166, 35, 0.1);
+}
+
+.scroll-link-luxury:hover .scroll-circle {
+    background: rgba(245, 166, 35, 0.2);
+    border-color: var(--accent-color);
+    box-shadow: 
+        0 0 40px rgba(245, 166, 35, 0.5),
+        inset 0 0 30px rgba(245, 166, 35, 0.2);
+    transform: scale(1.1);
+}
+
+/* الحلقة الدوارة */
+.scroll-ring {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--accent-color);
+    border-right-color: var(--accent-color);
+    animation: rotate-ring 3s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.scroll-link-luxury:hover .scroll-ring {
+    opacity: 1;
+}
+
+@keyframes rotate-ring {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* السهم المتحرك */
+.scroll-arrow {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    animation: bounce-arrow 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.6));
+}
+
+.scroll-link-luxury:hover .scroll-arrow {
+    color: #FFD700;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+}
+
+@keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% { 
+        transform: translateY(0);
+    }
+    40% { 
+        transform: translateY(-8px);
+    }
+    60% { 
+        transform: translateY(-4px);
+    }
+}
+
+/* النص */
+.scroll-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.scroll-text::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    transition: transform 0.4s ease;
+}
+
+.scroll-link-luxury:hover .scroll-text {
+    color: var(--accent-color);
+    text-shadow: 0 0 15px rgba(245, 166, 35, 0.5);
+    letter-spacing: 4px;
+}
+
+.scroll-link-luxury:hover .scroll-text::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* الإحصائيات */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-stat-item {
+    text-align: center;
+}
+
+.hero-stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent-color), #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.hero-stat-label {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 1200px) {
+    .hero-title-enhanced {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle-enhanced {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-title-enhanced {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle-enhanced {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description-enhanced {
+        font-size: 1.2rem;
+    }
+    
+    .hero-features {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title-enhanced {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle-enhanced {
+        font-size: 1.3rem;
+    }
+    
+    .hero-description-enhanced {
+        font-size: 1.1rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-buttons-enhanced {
+        flex-direction: column;
+    }
+    
+    .hero-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-stats {
+        gap: 30px;
+    }
+    
+    .hero-stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-enhanced {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle-enhanced {
+        font-size: 1.1rem;
+    }
+    
+    .hero-stat-number {
+        font-size: 2rem;
+    }
+}

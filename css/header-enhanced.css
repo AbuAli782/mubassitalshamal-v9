@@ -1,0 +1,356 @@
+/* ==============================
+   تنسيقات الشريط العلوي المحسّن
+   ============================== */
+
+/* الشريط الرئيسي */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    background: transparent;
+    transition: all 0.4s ease;
+}
+
+.header.scrolled {
+    padding: 15px 0;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(245, 166, 35, 0.3);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* الشعار المحسّن */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), #FFD700);
+    transition: width 0.4s ease;
+}
+
+.logo:hover::before {
+    width: 100%;
+}
+
+.logo i {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    animation: logoFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(245, 166, 35, 0.5));
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
+
+.logo span {
+    background: linear-gradient(135deg, var(--white), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 3px 10px rgba(245, 166, 35, 0.3);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* القائمة */
+.nav-list {
+    display: flex;
+    gap: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 12px 20px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(245, 166, 35, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), #FFD700);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    background: rgba(245, 166, 35, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: var(--accent-color);
+    background: rgba(245, 166, 35, 0.15);
+}
+
+/* أزرار الإجراءات */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* زر تغيير اللغة */
+.lang-toggle {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.2), rgba(245, 166, 35, 0.1));
+    border: 2px solid rgba(245, 166, 35, 0.5);
+    border-radius: 25px;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.lang-toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(245, 166, 35, 0.3), transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.lang-toggle:hover::before {
+    width: 200px;
+    height: 200px;
+}
+
+.lang-toggle:hover {
+    background: linear-gradient(135deg, var(--accent-color), #D98E19);
+    border-color: var(--accent-color);
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(245, 166, 35, 0.4);
+}
+
+/* زر القائمة المحمول */
+.mobile-menu-toggle {
+    display: none;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-color), #D98E19);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-menu-toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.mobile-menu-toggle:hover::before {
+    width: 100px;
+    height: 100px;
+}
+
+.mobile-menu-toggle:hover {
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 8px 25px rgba(245, 166, 35, 0.5);
+}
+
+.mobile-menu-toggle i {
+    position: relative;
+    z-index: 2;
+}
+
+/* تأثيرات خاصة */
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(245, 166, 35, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.header.scrolled::after {
+    opacity: 1;
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 992px) {
+    .nav {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 300px;
+        height: calc(100vh - 80px);
+        background: rgba(26, 26, 46, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 30px;
+        transition: right 0.4s ease;
+        border-left: 3px solid var(--accent-color);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .nav.active {
+        right: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-link {
+        padding: 15px;
+        font-size: 1.2rem;
+        border-radius: 12px;
+    }
+    
+    .nav-link::after {
+        bottom: 10px;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .logo i {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 0;
+    }
+    
+    .header.scrolled {
+        padding: 12px 0;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .logo i {
+        font-size: 1.6rem;
+    }
+    
+    .lang-toggle {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .mobile-menu-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .nav {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo span {
+        font-size: 1.1rem;
+    }
+    
+    .nav {
+        width: 100%;
+        right: -100%;
+        border-left: none;
+        border-top: 3px solid var(--accent-color);
+    }
+    
+    .nav.active {
+        right: 0;
+    }
+}

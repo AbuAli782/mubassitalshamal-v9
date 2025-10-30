@@ -1,0 +1,813 @@
+/* =========================================
+   نظام التجاوب الشامل - Responsive System
+   يدعم جميع الأجهزة والأنظمة
+   ========================================= */
+
+/* =========================================
+   Media Query Breakpoints
+   ========================================= */
+/* 
+   - Mobile Small: < 576px
+   - Mobile: 576px - 767px
+   - Tablet: 768px - 991px
+   - Laptop: 992px - 1199px
+   - Desktop: 1200px - 1399px
+   - Large Desktop: >= 1400px
+*/
+
+/* =========================================
+   إعدادات عامة للتجاوب
+   ========================================= */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   Container Responsive
+   ========================================= */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container { max-width: 540px; }
+}
+
+@media (min-width: 768px) {
+    .container { max-width: 720px; }
+}
+
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+}
+
+@media (min-width: 1200px) {
+    .container { max-width: 1140px; }
+}
+
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+}
+
+/* =========================================
+   Header - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .header {
+        padding: 12px 0;
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .logo i {
+        font-size: 1.5rem;
+    }
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(29, 44, 58, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 80px 30px 30px;
+        transition: right 0.4s ease;
+        overflow-y: auto;
+        z-index: 9999;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* للصفحة العربية */
+    html[dir="rtl"] .nav {
+        right: auto;
+        left: -100%;
+        transition: left 0.4s ease;
+        box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav.active {
+        right: 0;
+    }
+    
+    html[dir="rtl"] .nav.active {
+        left: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .nav-list li {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .logo i {
+        font-size: 1.3rem;
+    }
+    
+    .nav {
+        width: 260px;
+    }
+}
+
+/* =========================================
+   Hero Section - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .hero {
+        min-height: 70vh;
+        padding: 120px 0 60px;
+    }
+    
+    .hero-title-enhanced {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle-enhanced {
+        font-size: 1.1rem;
+    }
+    
+    .hero-description-enhanced {
+        font-size: 1rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-feature-item {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .hero-buttons-enhanced {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-btn {
+        width: 100%;
+        padding: 14px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        min-height: 60vh;
+        padding: 100px 0 50px;
+    }
+    
+    .hero-title-enhanced {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle-enhanced {
+        font-size: 1rem;
+    }
+    
+    .hero-description-enhanced {
+        font-size: 0.95rem;
+    }
+    
+    .hero-feature-item {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+    
+    .hero-btn {
+        font-size: 0.95rem;
+        padding: 12px 25px;
+    }
+}
+
+/* =========================================
+   Products Section - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .products-grid-enhanced {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .product-card-enhanced {
+        padding: 20px;
+    }
+    
+    .product-title-enhanced {
+        font-size: 1.1rem;
+    }
+    
+    .product-description-enhanced {
+        font-size: 0.9rem;
+    }
+    
+    .products-stats-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .stat-chip {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid-enhanced {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-description {
+        font-size: 0.95rem;
+    }
+    
+    .product-number {
+        font-size: 2.5rem;
+    }
+    
+    .product-image-wrapper {
+        height: 200px;
+    }
+}
+
+/* =========================================
+   Services Section - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .services-grid-enhanced {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .service-card-enhanced {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid-enhanced {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-icon-enhanced {
+        font-size: 2.5rem;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .service-title-enhanced {
+        font-size: 1.2rem;
+    }
+}
+
+/* =========================================
+   Projects Section - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .projects-grid-enhanced {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .projects-grid-enhanced {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .stat-item {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   Testimonials Section - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .testimonials-grid-enhanced {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .testimonial-card-enhanced {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonial-quote-enhanced {
+        font-size: 1rem;
+    }
+    
+    .testimonial-author-enhanced {
+        font-size: 1rem;
+    }
+}
+
+/* =========================================
+   About Section - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .about-content-enhanced {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .about-text-enhanced,
+    .about-features-enhanced {
+        width: 100%;
+    }
+    
+    .stats-grid-enhanced {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid-enhanced {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card-enhanced {
+        padding: 20px;
+    }
+    
+    .stat-number-enhanced {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   Contact Section - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .contact-wrapper-enhanced {
+        flex-direction: column;
+    }
+    
+    .contact-info-enhanced,
+    .contact-form-enhanced {
+        width: 100%;
+    }
+    
+    .contact-methods-enhanced {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form-group {
+        margin-bottom: 15px;
+    }
+    
+    .contact-input-enhanced,
+    .contact-textarea-enhanced {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    .contact-btn-enhanced {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* =========================================
+   Developers Section - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .developers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .developers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .developer-card {
+        padding: 25px;
+    }
+    
+    .developer-name {
+        font-size: 1.2rem;
+    }
+    
+    .developer-role {
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================
+   Footer - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-links {
+        align-items: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* =========================================
+   Buttons - التجاوب الكامل
+   ========================================= */
+@media (max-width: 576px) {
+    .btn,
+    button,
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   WhatsApp Button - التجاوب الكامل
+   ========================================= */
+@media (max-width: 576px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        left: 20px;
+        font-size: 26px;
+    }
+    
+    html[dir="rtl"] .whatsapp-float {
+        left: auto;
+        right: 20px;
+    }
+}
+
+/* =========================================
+   Typography - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    html {
+        font-size: 15px;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1.1rem; }
+    h6 { font-size: 1rem; }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 14px;
+    }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.35rem; }
+    h4 { font-size: 1.15rem; }
+    h5 { font-size: 1rem; }
+    h6 { font-size: 0.95rem; }
+}
+
+/* =========================================
+   Spacing - التجاوب الكامل
+   ========================================= */
+@media (max-width: 991px) {
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    section {
+        padding: 40px 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* =========================================
+   Tables - التجاوب الكامل
+   ========================================= */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* =========================================
+   Forms - التجاوب الكامل
+   ========================================= */
+@media (max-width: 576px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 16px; /* يمنع zoom في iOS */
+    }
+}
+
+/* =========================================
+   Animations - تعطيل على الأجهزة الضعيفة
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================
+   Print Styles - للطباعة
+   ========================================= */
+@media print {
+    .header,
+    .footer,
+    .whatsapp-float,
+    .mobile-menu-toggle,
+    button,
+    .btn {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   Landscape Orientation - الوضع الأفقي
+   ========================================= */
+@media (max-width: 991px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+    }
+    
+    .hero-title-enhanced {
+        font-size: 2.5rem;
+    }
+}
+
+/* =========================================
+   High DPI Screens - شاشات عالية الدقة
+   ========================================= */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* تحسينات للشاشات عالية الدقة */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* =========================================
+   Dark Mode Support - دعم الوضع الداكن
+   ========================================= */
+@media (prefers-color-scheme: dark) {
+    /* يمكن إضافة دعم للوضع الداكن هنا إذا لزم الأمر */
+}
+
+/* =========================================
+   Safari iOS Fixes
+   ========================================= */
+@supports (-webkit-touch-callout: none) {
+    /* iOS Safari specific styles */
+    body {
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    input,
+    textarea,
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0;
+    }
+}
+
+/* =========================================
+   Chrome Android Fixes
+   ========================================= */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select,
+    textarea,
+    input {
+        font-size: 16px;
+    }
+}
+
+/* =========================================
+   Internet Explorer Fixes
+   ========================================= */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE specific styles */
+    .flex-container {
+        display: -ms-flexbox;
+    }
+}
+
+/* =========================================
+   تحسينات إضافية للأجهزة المحمولة
+   ========================================= */
+@media (max-width: 576px) {
+    /* منع التكبير التلقائي في iOS */
+    input:focus,
+    select:focus,
+    textarea:focus {
+        font-size: 16px;
+    }
+    
+    /* تحسين النقر على العناصر */
+    a, button, input, select, textarea {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    /* تحسين التمرير */
+    body {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+    }
+}
+
+/* =========================================
+   تصحيح مشاكل RTL على الأجهزة المحمولة
+   ========================================= */
+@media (max-width: 991px) {
+    html[dir="rtl"] .header-actions {
+        flex-direction: row-reverse;
+    }
+    
+    html[dir="rtl"] .hero-buttons-enhanced {
+        align-items: stretch;
+    }
+    
+    html[dir="rtl"] .footer-bottom {
+        text-align: center;
+    }
+}
+
+/* =========================================
+   Small Devices (iPhone SE, old phones)
+   ========================================= */
+@media (max-width: 375px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero-title-enhanced {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .product-card-enhanced {
+        padding: 15px;
+    }
+    
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+        bottom: 15px;
+        left: 15px;
+    }
+}
+
+/* =========================================
+   Extra Large Devices (4K screens)
+   ========================================= */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .hero-title-enhanced {
+        font-size: 4rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+/* =========================================
+   Foldable Devices Support
+   ========================================= */
+@media (min-width: 280px) and (max-width: 653px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .products-grid-enhanced,
+    .services-grid-enhanced,
+    .projects-grid-enhanced {
+        grid-template-columns: 1fr;
+    }
+}

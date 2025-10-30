@@ -1,0 +1,56 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.cache
+*.bak
+*.old
+
+# Node modules (if using any build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Sensitive Files
+.env
+.env.local
+.env.*.local
+config/secrets.js
+
+# Backup files
+*.backup
+*-backup/
+backup/
+
+# System Files
+*.exe
+*.dll
+*.so
+*.dylib
