@@ -193,6 +193,7 @@
     <link rel="stylesheet" href="css/products-enhanced.css">
     <link rel="stylesheet" href="css/products-premium.css">
     <link rel="stylesheet" href="css/products-ultra.css">
+    <link rel="stylesheet" href="css/products-order.css">
     <link rel="stylesheet" href="css/services-enhanced.css">
     <link rel="stylesheet" href="css/projects-enhanced.css">
     <link rel="stylesheet" href="css/testimonials-enhanced.css">
@@ -203,6 +204,7 @@
     <link rel="stylesheet" href="css/developers-enhanced.css">
     <link rel="stylesheet" href="css/developers-3d.css">
     <link rel="stylesheet" href="css/footer-enhanced.css">
+    <link rel="stylesheet" href="css/blog-section.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -229,6 +231,7 @@
                         <li><a href="#services" class="nav-link">الخدمات</a></li>
                         <li><a href="#about" class="nav-link">من نحن</a></li>
                         <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
+                        <li><a href="#blog" class="nav-link">المدونة</a></li>
                         <li><a href="#developers" class="nav-link">المطورون</a></li>
                     </ul>
                 </nav>
@@ -244,6 +247,21 @@
     
     <!-- قسم العرض الرئيسي -->
     <section class="hero" id="home">
+        <!-- معرض الصور المتحرك -->
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('images/صور مواد البناء/01891154-daae-445c-933b-4a6db0dfb549-500x500-KzKjAqgbtMQtshehvgoFY276gVBDauI8ReBGZM7A.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/336035f0-5250-499c-a37b-d1b3e4203696-500x500-fSsqsDWvE2MAqGprAxeM9FPSth61KXaJLX3BafGR.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/4ba91280-c5a8-4bc9-a4da-8d0ba2de6384-500x500-bRBmNFlfzhrtn7LYLdcSnqUZUg5iI8RKb45OZHMy.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/53651e6a-cc5c-453e-a50c-d3fa25317984-500x500-cbQons3bSnBJ6NcdiTGTdRF5jFieRel1g00qifLL.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/76cad100-f58f-4cac-bcd8-629c3e8c3570-500x500-b51gfuNMGKyczOBjOElOReLCBe6mqU2TKsAU23ub.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/7d1f5190-4fa1-4943-b5af-8e47d947f83b-500x500-xtF8qf3OV4UMSDNF607iXmjd5OJbARitvntRQWPW.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/865af44d-e934-4309-8a77-fcebde579aa8-500x500-TGP4FMbejjh7NB10OwLti6UF3SuruGZ4m1Lg9wD5.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/938b0a67-72b8-46b5-bba9-1383a9c1bff3-500x500-IxRTASfOnJZbvDO5XwwnfVMlfu4C3p9u16AUWWdr.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/befc448e-41bc-41a6-99c6-5d637ffb9558-500x500-pfYxWuOsaDeUTI1JFihHJx0lUQG6pU7CvVS5xPkd.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/d75fee0f-7910-4b1e-a4c9-1a5e66e9700b-500x500-f1xAUmn9bQyBU9MHmH9Qr4PAcErcDgpmzydk3Ol9.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/de8a31a8-b7d8-4c24-adaa-c1704d432f29-500x500-KDjUfVxq5WGYEjNp4zm20uXRKqqqMLeZUFVgWeLf.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/webp (6).webp');"></div>
+        </div>
         <div class="hero-overlay"><br></div>
         <div class="hero-content">
             <h1 class="hero-title-enhanced" data-aos="fade-down">
@@ -359,10 +377,25 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> قوة عالية</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> جودة مضمونة</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <!-- حقل الكمية -->
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> الكمية (كيس):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-1" min="1" value="1" placeholder="أدخل الكمية">
+                        </div>
+                        
+                        <!-- أزرار الطلب والمشاركة -->
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('أسمنت بورتلاندي عادي', 'quantity-product-1')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('أسمنت بورتلاندي عادي', 'أسمنت بورتلاندي عالي الجودة مطابق للمواصفات')" title="مشاركة المنتج">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="200">
@@ -399,10 +432,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> للتشطيبات</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> لون ناصع</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> الكمية (كيس):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-2" min="1" value="1" placeholder="أدخل الكمية">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('أسمنت أبيض للتشطيبات', 'quantity-product-2')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('أسمنت أبيض للتشطيبات', 'أسمنت أبيض فائق النعومة للتشطيبات')" title="مشاركة المنتج">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="300">
@@ -439,10 +485,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> سهل الفرد</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> احترافي</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> الكمية (كيس):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-3" min="1" value="1" placeholder="أدخل الكمية">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('أسمنت التشطيبات الأخضر', 'quantity-product-3')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('أسمنت التشطيبات الأخضر', 'أسمنت تشطيبات للأعمال الدقيقة')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="100">
@@ -464,10 +523,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> عزل صوتي</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> مقاوم للحريق</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> الكمية (بلك):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-4" min="1" value="1" placeholder="أدخل الكمية">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('البلوك الأسمنتي', 'quantity-product-4')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('البلوك الأسمنتي', 'بلوك أسمنتي عالي الكثافة للجدران')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="200">
@@ -489,10 +561,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> للأسقف</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> توفير الطاقة</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> الكمية (بلك):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-5" min="1" value="1" placeholder="أدخل الكمية">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('بلك هوردي', 'quantity-product-5')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('بلك هوردي', 'بلك هوردي خفيف للأسقف')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="300">
@@ -514,10 +599,35 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> خالي من الأملاح</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> حبيبات متجانسة</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-size-section">
+                            <label class="size-label">
+                                <i class="fas fa-truck"></i> حجم الشحنة:
+                            </label>
+                            <select class="size-select" id="size-product-6">
+                                <option value="دينا">دينا</option>
+                                <option value="ترك عادي">ترك عادي</option>
+                                <option value="ست عجلات">ست عجلات</option>
+                                <option value="تريلا">تريلا</option>
+                            </select>
+                        </div>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> عدد الشحنات:
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-6" min="1" value="1" placeholder="أدخل العدد">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProductWithSize('رمل أبيض مغسول', 'quantity-product-6', 'size-product-6')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('رمل أبيض مغسول', 'رمل أبيض نقي للخلطات الخرسانية')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="100">
@@ -539,10 +649,38 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> كثافة عالية</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> اقتصادي</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <!-- قائمة الأحجام -->
+                        <div class="product-size-section">
+                            <label class="size-label">
+                                <i class="fas fa-truck"></i> حجم الشحنة:
+                            </label>
+                            <select class="size-select" id="size-product-7">
+                                <option value="دينا">دينا</option>
+                                <option value="ترك عادي">ترك عادي</option>
+                                <option value="ست عجلات">ست عجلات</option>
+                                <option value="تريلا">تريلا</option>
+                            </select>
+                        </div>
+                        
+                        <!-- حقل الكمية -->
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> عدد الشحنات:
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-7" min="1" value="1" placeholder="أدخل العدد">
+                        </div>
+                        
+                        <!-- أزرار الطلب والمشاركة -->
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProductWithSize('رمل أحمر (دفان)', 'quantity-product-7', 'size-product-7')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('رمل أحمر (دفان)', 'رمل أحمر طبيعي عالي الجودة للردم')" title="مشاركة المنتج">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="200">
@@ -564,10 +702,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> قوة عالية</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> دقيق</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> الكمية (حبة):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-8" min="1" value="1" placeholder="أدخل الكمية">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('البسكوت الخرساني', 'quantity-product-8')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('البسكوت الخرساني', 'فواصل خرسانية لحديد التسليح')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="300">
@@ -589,10 +740,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> مقاوم</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> ألوان متنوعة</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> الكمية (متر مربع):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-9" min="1" value="1" placeholder="أدخل الكمية">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('بلاط وانترلوك', 'quantity-product-9')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('بلاط وانترلوك', 'بلاط وانترلوك بأشكال عصرية')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="100">
@@ -614,10 +778,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> تصاميم جميلة</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> للأرصفة</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> الكمية (متر):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-10" min="1" value="1" placeholder="أدخل الكمية">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('البندورة الخرسانية', 'quantity-product-10')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('البندورة الخرسانية', 'حواجز خرسانية للأرصفة')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="200">
@@ -639,10 +816,35 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> نظيف</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> عالي الجودة</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-size-section">
+                            <label class="size-label">
+                                <i class="fas fa-truck"></i> حجم الشحنة:
+                            </label>
+                            <select class="size-select" id="size-product-11">
+                                <option value="دينا">دينا</option>
+                                <option value="ترك عادي">ترك عادي</option>
+                                <option value="ست عجلات">ست عجلات</option>
+                                <option value="تريلا">تريلا</option>
+                            </select>
+                        </div>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> عدد الشحنات:
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-11" min="1" value="1" placeholder="أدخل العدد">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProductWithSize('الصبيز (الحصى)', 'quantity-product-11', 'size-product-11')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('الصبيز (الحصى)', 'حصى خرساني عالي الجودة')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="300">
@@ -664,10 +866,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> عاكسة للضوء</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> متينة</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>اطلب الآن</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> الكمية (حبة):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-12" min="1" value="1" placeholder="أدخل الكمية">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('مصدات المواقف', 'quantity-product-12')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>اطلب عبر واتساب</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('مصدات المواقف', 'مصدات مواقف عالية الجودة')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -829,31 +1044,108 @@
 
             <!-- المحتوى الرئيسي -->
             <div class="about-content-luxury">
-                <!-- بطاقة النص الرئيسية -->
+                <!-- صورة مميزة في البداية -->
+                <div class="about-hero-image" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="image-wrapper-luxury">
+                        <img src="images/لماذا تختار مبسط الشمال.jpg" alt="لماذا تختار مبسط الشمال" class="hero-img">
+                        <div class="image-overlay-glow"></div>
+                        <div class="image-border-animated"></div>
+                    </div>
+                </div>
+
+                <!-- بطاقة من نحن -->
                 <div class="about-glass-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="glass-shine"></div>
                     <p class="about-main-text">
-                        <strong class="text-highlight">مبسط الشمال</strong> هو مجمع سعودي رائد متخصص في توريد جميع أنواع مواد البناء والتشطيب بأعلى معايير الجودة العالمية.
-                    </p>
-                </div>
-
-                <!-- بطاقة التميز -->
-                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="glass-shine"></div>
-                    <p class="about-main-text">
-                        نحن نفخر بكوننا <strong class="text-highlight">الخيار الأول</strong> للمقاولين والمهندسين وأصحاب المشاريع في جميع أحياء الرياض، بفضل التزامنا الدائم بتوفير أفضل المنتجات بأسعار تنافسية وخدمة عملاء استثنائية تتجاوز التوقعات.
+                        في <strong class="text-highlight">متجر مبسط الشمال</strong>، نؤمن بأن البناء ليس مجرد عملية تشييد، بل هو فن وركيزة أساسية لصناعة مستقبل مشرق. نحن أحد المتاجر الرائدة والمتخصصة في توفير مواد البناء الأساسية في الرياض، حيث نقدم مجموعة متنوعة من المنتجات التي تشمل الأسمنت، البلوك، الرمل، البحص، والعديد من مواد البناء الأخرى التي تلبي احتياجات مشروعك، سواء كنت مقاولاً، أو كنت في رحلة بناء منزلك الشخصي.
                     </p>
                 </div>
 
                 <!-- بطاقة الرؤية -->
-                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="glass-shine"></div>
                     <div class="vision-content">
                         <i class="fas fa-lightbulb vision-icon"></i>
-                        <p class="about-main-text">
-                            <strong class="text-highlight">رؤيتنا</strong> هي أن نكون الخيار الأول والأمثل لكل من يبحث عن الجودة والثقة والاحترافية في عالم مواد البناء، ونسعى دائماً للتطور والابتكار لخدمتكم بشكل أفضل.
-                        </p>
+                        <div>
+                            <h3 style="color: #3498db; font-size: 1.8rem; margin-bottom: 15px; font-weight: 800;">رؤيتنا</h3>
+                            <p class="about-main-text">
+                                أن نكون <strong class="text-highlight">الشريك المثالي</strong> لنجاح مشاريع البناء، وذلك من خلال تقديم منتجات عالية الجودة وخدمات متميزة ترتقي بتوقعات عملائنا. يعتمد نجاحنا على فريق عمل محترف يمتلك الخبرة والشغف لضمان تقديم أفضل تجربة للعملاء، بالإضافة إلى حرصنا على مواكبة أحدث معايير الجودة والابتكار في مجال البناء.
+                            </p>
+                        </div>
                     </div>
+                </div>
+
+                <!-- بطاقة الرسالة -->
+                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-shine"></div>
+                    <div class="vision-content">
+                        <i class="fas fa-bullseye vision-icon"></i>
+                        <div>
+                            <h3 style="color: #9b59b6; font-size: 1.8rem; margin-bottom: 15px; font-weight: 800;">رسالتنا</h3>
+                            <p class="about-main-text">
+                                نسعى بتفانٍ واجتهاد لتقديم <strong class="text-highlight">خدمات متميزة</strong>. هدفنا هو التميز في كل خطوة نقوم بها، من تقديم منتجات موثوقة إلى ترك بصمة تجعلنا الخيار الأول للعملاء الذين يبحثون عن الجودة والاحترافية، والخدمات المضافة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بطاقة الهدف -->
+                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-shine"></div>
+                    <div class="vision-content">
+                        <i class="fas fa-target vision-icon"></i>
+                        <div>
+                            <h3 style="color: #e74c3c; font-size: 1.8rem; margin-bottom: 15px; font-weight: 800;">هدفنا</h3>
+                            <p class="about-main-text">
+                                في المبسط، نضع <strong class="text-highlight">رضا عملائنا</strong> على رأس أولوياتنا من خلال توفير تجربة تسوق متميزة تساهم في نجاح مشاريعهم. ولتحقيق ذلك، نركز على:
+                            </p>
+                            <ul class="goals-list-enhanced">
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>توفير منتجات عالية الجودة</strong>
+                                        <span>لضمان استدامة ونجاح المشاريع</span>
+                                    </div>
+                                </li>
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>تقديم خدمة عملاء استثنائية</strong>
+                                        <span>تلبي توقعاتكم وتتجاوزها</span>
+                                    </div>
+                                </li>
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>توفير سهولة ومرونة</strong>
+                                        <span>في عملية التسوق والطلب</span>
+                                    </div>
+                                </li>
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>توصيل المنتجات بسرعة وأمان</strong>
+                                        <span>إلى موقع مشروعك مباشرة</span>
+                                    </div>
+                                </li>
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>تعزيز الابتكار والاستدامة</strong>
+                                        <span>في تقديم حلول بناء متطورة</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بطاقة الخاتمة -->
+                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="glass-shine"></div>
+                    <p class="about-main-text" style="text-align: center; font-size: 1.3rem; font-weight: 700;">
+                        <strong class="text-highlight">المبسط</strong> ليس مجرد متجر، بل هو <strong class="text-highlight">شريكك في بناء أحلامك</strong>. دعنا نساعدك في تحويل أفكارك إلى واقع ناجح ومستدام.
+                    </p>
                 </div>
 
                 <!-- عنوان المميزات -->
@@ -909,6 +1201,25 @@
                         <div class="btn-glow"></div>
                     </a>
                 </div>
+
+                <!-- قسم التعليقات والأسئلة -->
+                <div class="blog-comment-section" data-aos="fade-up" data-aos-delay="1000" style="margin-top: 60px;">
+                    <div class="comment-header">
+                        <h3 class="comment-title">💬 شاركنا رأيك أو استفسارك</h3>
+                        <p class="comment-subtitle">نحن هنا للإجابة على جميع أسئلتك وتقديم أفضل الاستشارات</p>
+                    </div>
+                    <div class="comment-form">
+                        <textarea 
+                            id="commentTextAbout" 
+                            class="comment-textarea" 
+                            placeholder="اكتب سؤالك أو رأيك أو تعليقك هنا... نحن في خدمتك دائماً"
+                        ></textarea>
+                        <button type="button" class="comment-submit-btn" onclick="sendToWhatsAppAbout()">
+                            <i class="fab fa-whatsapp"></i>
+                            إرسال عبر واتساب
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -961,7 +1272,7 @@
                         <div class="contact-details">
                             <h3>أوقات العمل</h3>
                             <p>السبت - الخميس</p>
-                            <p>8:00 صباحاً - 6:00 مساءً</p>
+                            <p>6:00 صباحاً - 8:00 مساءً</p>
                         </div>
                     </div>
 
@@ -1046,6 +1357,96 @@
                     </a>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.1234567890!2d46.637750!3d24.856667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDUxJzI0LjAiTiA0NsKwMzgnMTUuOSJF!5e0!3m2!1sar!2ssa!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المدونة -->
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <!-- عنوان القسم -->
+            <div class="blog-header" data-aos="fade-up">
+                <h2 class="section-title">📝 مدونة مواد البناء</h2>
+                <p class="section-description">نصائح ومعلومات قيمة عن مواد البناء وأفضل الممارسات في عالم الإنشاءات</p>
+            </div>
+
+            <!-- شبكة المدونات -->
+            <div class="blog-grid">
+                <!-- مدونة 1 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image-wrapper">
+                        <img src="images/اسمنت بورتلاندي عادي.jpg" alt="أسمنت مبسط الشمال" class="blog-image">
+                        <div class="blog-overlay"></div>
+                        <span class="blog-category">أسمنت</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">أسمنت مبسط الشمال: الجودة والقوة</h3>
+                        <p class="blog-excerpt">نوفر جميع أنواع الأسمنت: البورتلندي العادي، الأبيض للتشطيبات، والمقاوم للرطوبة. كلها بجودة عالية وأسعار تنافسية.</p>
+                        <a href="https://wa.me/966503729380?text=أريد%20الاستفسار%20عن%20أنواع%20الأسمنت" target="_blank" class="blog-read-more">استفسر الآن <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- مدونة 2 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image-wrapper">
+                        <img src="images/بلك.jpg" alt="بلك خرساني" class="blog-image">
+                        <div class="blog-overlay"></div>
+                        <span class="blog-category">بلك</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">البلك الخرساني بجميع المقاسات</h3>
+                        <p class="blog-excerpt">نقدم بلك خرساني بجميع المقاسات والأحجام: 20×20×40 سم، 15×20×40 سم، 10×20×40 سم. جودة ممتازة وتوصيل سريع.</p>
+                        <a href="https://wa.me/966503729380?text=أريد%20الاستفسار%20عن%20البلك%20الخرساني" target="_blank" class="blog-read-more">استفسر الآن <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- مدونة 3 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image-wrapper">
+                        <img src="images/بلاط بجميع انواعة.jpg" alt="بلاط وسيراميك" class="blog-image">
+                        <div class="blog-overlay"></div>
+                        <span class="blog-category">بلاط وسيراميك</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">بلاط وسيراميك بتصاميم عصرية</h3>
+                        <p class="blog-excerpt">مجموعة ضخمة من البلاط والسيراميك للأرضيات والجدران. تصاميم حديثة وخامات عالية الجودة لكل الأذواق.</p>
+                        <a href="https://wa.me/966503729380?text=أريد%20الاستفسار%20عن%20البلاط%20والسيراميك" target="_blank" class="blog-read-more">استفسر الآن <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- مدونة 4 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image-wrapper">
+                        <img src="images/رمل احمر.jpg" alt="الرمل والحصى" class="blog-image">
+                        <div class="blog-overlay"></div>
+                        <span class="blog-category">رمل وحصى</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">رمل وحصى بجودة عالية</h3>
+                        <p class="blog-excerpt">نوفر رمل وحصى مغسول ومنخّل بجودة ممتازة لجميع أعمال الخرسانة والبناء. توصيل فوري لموقع مشروعك.</p>
+                        <a href="https://wa.me/966503729380?text=أريد%20الاستفسار%20عن%20الرمل%20والحصى" target="_blank" class="blog-read-more">استفسر الآن <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- قسم التعليقات والأسئلة -->
+            <div class="blog-comment-section" data-aos="fade-up" data-aos-delay="100">
+                <div class="comment-header">
+                    <h3 class="comment-title">💬 شاركنا رأيك أو استفسارك</h3>
+                    <p class="comment-subtitle">نحن هنا للإجابة على جميع أسئلتك وتقديم أفضل الاستشارات</p>
+                </div>
+                <div class="comment-form">
+                    <textarea 
+                        id="commentText" 
+                        class="comment-textarea" 
+                        placeholder="اكتب سؤالك أو رأيك أو تعليقك هنا... نحن في خدمتك دائماً"
+                    ></textarea>
+                    <button type="button" class="comment-submit-btn" onclick="sendToWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                        إرسال عبر واتساب
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -1226,8 +1627,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 جميع الحقوق محفوظة لمجمع مبسط الشمال لمواد البناء</p>
                 <div class="footer-bottom-links">
-                    <a href="#">سياسة الخصوصية</a>
-                    <a href="#">شروط الاستخدام</a>
+                    <a href="privacy-ar.html">سياسة الخصوصية</a>
+                    <a href="terms-ar.html">شروط الاستخدام</a>
                     <a href="#developers">فريق التطوير</a>
                 </div>
             </div>
@@ -1238,5 +1639,97 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
     <script src="js/developers-fix.js"></script>
+    
+    <script>
+    function sendToWhatsApp() {
+        const comment = document.getElementById('commentText').value.trim();
+        if (comment === '') {
+            alert('الرجاء كتابة تعليق أو سؤال قبل الإرسال');
+            return;
+        }
+        const whatsappNumber = '966503729380';
+        const message = encodeURIComponent(comment);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank');
+        document.getElementById('commentText').value = '';
+    }
+    
+    function sendToWhatsAppAbout() {
+        const comment = document.getElementById('commentTextAbout').value.trim();
+        if (comment === '') {
+            alert('الرجاء كتابة تعليق أو سؤال قبل الإرسال');
+            return;
+        }
+        const whatsappNumber = '966503729380';
+        const message = encodeURIComponent(comment);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank');
+        document.getElementById('commentTextAbout').value = '';
+    }
+    
+    // سلايدر الصور المتحرك
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        // تغيير الصورة كل 4 ثواني
+        setInterval(showNextSlide, 4000);
+    });
+    
+    // دالة طلب منتج عادي (بدون أحجام)
+    function orderProduct(productName, quantityId) {
+        const quantity = document.getElementById(quantityId).value;
+        if (!quantity || quantity < 1) {
+            alert('الرجاء إدخال الكمية');
+            return;
+        }
+        
+        const whatsappNumber = '966503729380';
+        const message = `السلام عليكم\n\nأرغب بطلب:\n📦 المنتج: ${productName}\n🔢 الكمية: ${quantity}\n\nشكراً لكم`;
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+    }
+    
+    // دالة طلب منتج مع أحجام
+    function orderProductWithSize(productName, quantityId, sizeId) {
+        const quantity = document.getElementById(quantityId).value;
+        const size = document.getElementById(sizeId).value;
+        
+        if (!quantity || quantity < 1) {
+            alert('الرجاء إدخال الكمية');
+            return;
+        }
+        
+        const whatsappNumber = '966503729380';
+        const message = `السلام عليكم\n\nأرغب بطلب:\n📦 المنتج: ${productName}\n📏 الحجم: ${size}\n🔢 عدد الشحنات: ${quantity}\n\nشكراً لكم`;
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+    }
+    
+    // دالة مشاركة المنتج
+    function shareProduct(productName, productDescription) {
+        const shareText = `🏗️ ${productName}\n\n${productDescription}\n\n📞 للطلب: https://wa.me/966503729380`;
+        
+        if (navigator.share) {
+            navigator.share({
+                title: productName,
+                text: shareText
+            }).catch(err => console.log('Error sharing:', err));
+        } else {
+            // نسخ للحافظة
+            navigator.clipboard.writeText(shareText).then(() => {
+                alert('تم نسخ معلومات المنتج! يمكنك مشاركتها الآن');
+            }).catch(() => {
+                alert('حدث خطأ في المشاركة');
+            });
+        }
+    }
+    </script>
 </body>
 </html>

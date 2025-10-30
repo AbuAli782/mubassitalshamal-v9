@@ -193,6 +193,7 @@
     <link rel="stylesheet" href="css/products-enhanced.css">
     <link rel="stylesheet" href="css/products-premium.css">
     <link rel="stylesheet" href="css/products-ultra.css">
+    <link rel="stylesheet" href="css/products-order.css">
     <link rel="stylesheet" href="css/services-enhanced.css">
     <link rel="stylesheet" href="css/projects-enhanced.css">
     <link rel="stylesheet" href="css/testimonials-enhanced.css">
@@ -203,6 +204,7 @@
     <link rel="stylesheet" href="css/developers-enhanced.css">
     <link rel="stylesheet" href="css/developers-3d.css">
     <link rel="stylesheet" href="css/footer-enhanced.css">
+    <link rel="stylesheet" href="css/blog-section.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -229,6 +231,7 @@
                         <li><a href="#services" class="nav-link">Services</a></li>
                         <li><a href="#about" class="nav-link">About Us</a></li>
                         <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li><a href="#blog" class="nav-link">Blog</a></li>
                         <li><a href="#developers" class="nav-link">Developers</a></li>
                     </ul>
                 </nav>
@@ -244,6 +247,21 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <!-- Image Slider -->
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('images/صور مواد البناء/01891154-daae-445c-933b-4a6db0dfb549-500x500-KzKjAqgbtMQtshehvgoFY276gVBDauI8ReBGZM7A.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/336035f0-5250-499c-a37b-d1b3e4203696-500x500-fSsqsDWvE2MAqGprAxeM9FPSth61KXaJLX3BafGR.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/4ba91280-c5a8-4bc9-a4da-8d0ba2de6384-500x500-bRBmNFlfzhrtn7LYLdcSnqUZUg5iI8RKb45OZHMy.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/53651e6a-cc5c-453e-a50c-d3fa25317984-500x500-cbQons3bSnBJ6NcdiTGTdRF5jFieRel1g00qifLL.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/76cad100-f58f-4cac-bcd8-629c3e8c3570-500x500-b51gfuNMGKyczOBjOElOReLCBe6mqU2TKsAU23ub.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/7d1f5190-4fa1-4943-b5af-8e47d947f83b-500x500-xtF8qf3OV4UMSDNF607iXmjd5OJbARitvntRQWPW.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/865af44d-e934-4309-8a77-fcebde579aa8-500x500-TGP4FMbejjh7NB10OwLti6UF3SuruGZ4m1Lg9wD5.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/938b0a67-72b8-46b5-bba9-1383a9c1bff3-500x500-IxRTASfOnJZbvDO5XwwnfVMlfu4C3p9u16AUWWdr.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/befc448e-41bc-41a6-99c6-5d637ffb9558-500x500-pfYxWuOsaDeUTI1JFihHJx0lUQG6pU7CvVS5xPkd.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/d75fee0f-7910-4b1e-a4c9-1a5e66e9700b-500x500-f1xAUmn9bQyBU9MHmH9Qr4PAcErcDgpmzydk3Ol9.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/de8a31a8-b7d8-4c24-adaa-c1704d432f29-500x500-KDjUfVxq5WGYEjNp4zm20uXRKqqqMLeZUFVgWeLf.webp');"></div>
+            <div class="hero-slide" style="background-image: url('images/صور مواد البناء/webp (6).webp');"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title-enhanced" data-aos="fade-down">
@@ -356,10 +374,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> High Strength</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Quality Assured</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Quantity (Bags):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-1" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('Portland Cement', 'quantity-product-en-1')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Portland Cement', 'High-quality Portland cement')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="200">
@@ -393,13 +424,26 @@
                         </div>
                         <div class="product-features">
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Ultra-Smooth</span>
-                            <span class="feature-tag"><i class="fas fa-check-circle"></i> For Finishes</span>
-                            <span class="feature-tag"><i class="fas fa-check-circle"></i> Bright White</span>
+                            <span class="feature-tag"><i class="fas fa-check-circle"></i> For Finishing</span>
+                            <span class="feature-tag"><i class="fas fa-check-circle"></i> Bright Color</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Quantity (Bags):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-2" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('White Finishing Cement', 'quantity-product-en-2')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('White Finishing Cement', 'Ultra-smooth white cement for finishing')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="300">
@@ -436,10 +480,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Easy to Spread</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Professional</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Quantity (Bags):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-3" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('Green Finishing Cement', 'quantity-product-en-3')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Green Finishing Cement', 'Professional finishing cement')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="100">
@@ -476,10 +533,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Sound Insulation</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Fire Resistant</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Quantity (Blocks):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-4" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('Concrete Block', 'quantity-product-en-4')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Concrete Block', 'High-density concrete blocks')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="200">
@@ -513,13 +583,26 @@
                         </div>
                         <div class="product-features">
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Lightweight</span>
-                            <span class="feature-tag"><i class="fas fa-check-circle"></i> For Ceilings</span>
+                            <span class="feature-tag"><i class="fas fa-check-circle"></i> For Roofing</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Energy Saving</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Quantity (Blocks):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-5" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('Hourdis Block', 'quantity-product-en-5')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Hourdis Block', 'Lightweight blocks for roofing')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="300">
@@ -556,10 +639,35 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Salt-Free</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Uniform Grains</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-size-section">
+                            <label class="size-label">
+                                <i class="fas fa-truck"></i> Load Size:
+                            </label>
+                            <select class="size-select" id="size-product-en-6">
+                                <option value="Dina">Dina</option>
+                                <option value="Regular Truck">Regular Truck</option>
+                                <option value="6-Wheeler">6-Wheeler</option>
+                                <option value="Trailer">Trailer</option>
+                            </select>
+                        </div>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Number of Loads:
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-6" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProductWithSize('White Washed Sand', 'quantity-product-en-6', 'size-product-en-6')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('White Washed Sand', 'Pure white sand for concrete')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="100">
@@ -596,10 +704,35 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> High Density</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Economical</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-size-section">
+                            <label class="size-label">
+                                <i class="fas fa-truck"></i> Load Size:
+                            </label>
+                            <select class="size-select" id="size-product-en-7">
+                                <option value="Dina">Dina</option>
+                                <option value="Regular Truck">Regular Truck</option>
+                                <option value="6-Wheeler">6-Wheeler</option>
+                                <option value="Trailer">Trailer</option>
+                            </select>
+                        </div>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Number of Loads:
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-7" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProductWithSize('Red Fill Sand', 'quantity-product-en-7', 'size-product-en-7')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Red Fill Sand', 'High-quality natural red sand for filling')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="200">
@@ -635,10 +768,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> High Strength</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Precise</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Quantity (Pieces):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-8" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('Concrete Spacers', 'quantity-product-en-8')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Concrete Spacers', 'Concrete spacers for reinforcement')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="300">
@@ -675,10 +821,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Durable</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Various Colors</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Quantity (sqm):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-9" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('Tiles & Interlock', 'quantity-product-en-9')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Tiles & Interlock', 'Modern tiles and interlock designs')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="100">
@@ -715,10 +874,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Beautiful Designs</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> For Sidewalks</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Quantity (Meters):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-10" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('Concrete Curbs', 'quantity-product-en-10')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Concrete Curbs', 'Concrete barriers for sidewalks')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="200">
@@ -755,10 +927,35 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Clean</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> High Quality</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-size-section">
+                            <label class="size-label">
+                                <i class="fas fa-truck"></i> Load Size:
+                            </label>
+                            <select class="size-select" id="size-product-en-11">
+                                <option value="Dina">Dina</option>
+                                <option value="Regular Truck">Regular Truck</option>
+                                <option value="6-Wheeler">6-Wheeler</option>
+                                <option value="Trailer">Trailer</option>
+                            </select>
+                        </div>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Number of Loads:
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-11" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProductWithSize('Gravel (Aggregates)', 'quantity-product-en-11', 'size-product-en-11')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Gravel (Aggregates)', 'High-quality concrete gravel')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-enhanced" data-aos="zoom-in" data-aos-delay="300">
@@ -795,10 +992,23 @@
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Light Reflective</span>
                             <span class="feature-tag"><i class="fas fa-check-circle"></i> Durable</span>
                         </div>
-                        <a href="#contact" class="product-btn-enhanced">
-                            <span>Order Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="product-quantity-section">
+                            <label class="quantity-label">
+                                <i class="fas fa-calculator"></i> Quantity (Pieces):
+                            </label>
+                            <input type="number" class="quantity-input" id="quantity-product-en-12" min="1" value="1" placeholder="Enter quantity">
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="product-btn-enhanced order-btn" onclick="orderProduct('Parking Stops', 'quantity-product-en-12')">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Order via WhatsApp</span>
+                            </button>
+                            <button class="product-btn-share" onclick="shareProduct('Parking Stops', 'High-quality parking stops')" title="Share Product">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -960,31 +1170,108 @@
 
             <!-- Main Content -->
             <div class="about-content-luxury">
-                <!-- Main Text Card -->
+                <!-- Hero Image -->
+                <div class="about-hero-image" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="image-wrapper-luxury">
+                        <img src="images/لماذا تختار مبسط الشمال.jpg" alt="Why Choose Mubassit Al-Shamal" class="hero-img">
+                        <div class="image-overlay-glow"></div>
+                        <div class="image-border-animated"></div>
+                    </div>
+                </div>
+
+                <!-- About Us Card -->
                 <div class="about-glass-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="glass-shine"></div>
                     <p class="about-main-text">
-                        <strong class="text-highlight">Mubassit Al-Shamal</strong> is a leading Saudi complex specialized in supplying all types of building and finishing materials with the highest international quality standards.
-                    </p>
-                </div>
-
-                <!-- Excellence Card -->
-                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="glass-shine"></div>
-                    <p class="about-main-text">
-                        We take pride in being <strong class="text-highlight">the first choice</strong> for contractors, engineers, and project owners throughout the Kingdom, thanks to our constant commitment to providing the best products at competitive prices and exceptional customer service that exceeds expectations.
+                        At <strong class="text-highlight">Mubassit Al-Shamal Store</strong>, we believe that construction is not just a building process, but an art and a fundamental pillar for creating a bright future. We are one of the leading stores specialized in providing essential building materials in Riyadh, offering a diverse range of products including cement, blocks, sand, gravel, and many other building materials that meet your project needs, whether you are a contractor or on a journey to build your personal home.
                     </p>
                 </div>
 
                 <!-- Vision Card -->
-                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="glass-shine"></div>
                     <div class="vision-content">
                         <i class="fas fa-lightbulb vision-icon"></i>
-                        <p class="about-main-text">
-                            <strong class="text-highlight">Our Vision</strong> is to be the first and optimal choice for anyone looking for quality, trust, and professionalism in the world of building materials, and we always strive for development and innovation to serve you better.
-                        </p>
+                        <div>
+                            <h3 style="color: #3498db; font-size: 1.8rem; margin-bottom: 15px; font-weight: 800;">Our Vision</h3>
+                            <p class="about-main-text">
+                                To be <strong class="text-highlight">the ideal partner</strong> for the success of construction projects, by providing high-quality products and distinguished services that elevate our customers' expectations. Our success depends on a professional team that possesses the experience and passion to ensure providing the best customer experience, in addition to our commitment to keeping up with the latest quality and innovation standards in the construction field.
+                            </p>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-shine"></div>
+                    <div class="vision-content">
+                        <i class="fas fa-bullseye vision-icon"></i>
+                        <div>
+                            <h3 style="color: #9b59b6; font-size: 1.8rem; margin-bottom: 15px; font-weight: 800;">Our Mission</h3>
+                            <p class="about-main-text">
+                                We strive with dedication and diligence to provide <strong class="text-highlight">distinguished services</strong>. Our goal is excellence in every step we take, from providing reliable products to leaving a mark that makes us the first choice for customers seeking quality, professionalism, and added services.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goal Card -->
+                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-shine"></div>
+                    <div class="vision-content">
+                        <i class="fas fa-target vision-icon"></i>
+                        <div>
+                            <h3 style="color: #e74c3c; font-size: 1.8rem; margin-bottom: 15px; font-weight: 800;">Our Goal</h3>
+                            <p class="about-main-text">
+                                At Mubassit, we place <strong class="text-highlight">customer satisfaction</strong> at the top of our priorities by providing an outstanding shopping experience that contributes to the success of their projects. To achieve this, we focus on:
+                            </p>
+                            <ul class="goals-list-enhanced">
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>Providing High-Quality Products</strong>
+                                        <span>To ensure project sustainability and success</span>
+                                    </div>
+                                </li>
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>Exceptional Customer Service</strong>
+                                        <span>That meets and exceeds your expectations</span>
+                                    </div>
+                                </li>
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>Ease and Flexibility</strong>
+                                        <span>In the shopping and ordering process</span>
+                                    </div>
+                                </li>
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>Fast and Safe Delivery</strong>
+                                        <span>Directly to your project site</span>
+                                    </div>
+                                </li>
+                                <li class="goal-item">
+                                    <div class="goal-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="goal-text">
+                                        <strong>Innovation and Sustainability</strong>
+                                        <span>In providing advanced construction solutions</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Closing Card -->
+                <div class="about-glass-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="glass-shine"></div>
+                    <p class="about-main-text" style="text-align: center; font-size: 1.3rem; font-weight: 700;">
+                        <strong class="text-highlight">Mubassit</strong> is not just a store, but <strong class="text-highlight">your partner in building your dreams</strong>. Let us help you turn your ideas into a successful and sustainable reality.
+                    </p>
                 </div>
 
                 <!-- Features Title -->
@@ -1039,6 +1326,25 @@
                         <i class="fas fa-box"></i>
                         <div class="btn-glow"></div>
                     </a>
+                </div>
+
+                <!-- Comments and Questions Section -->
+                <div class="blog-comment-section" data-aos="fade-up" data-aos-delay="1000" style="margin-top: 60px;">
+                    <div class="comment-header">
+                        <h3 class="comment-title">💬 Share Your Opinion or Question</h3>
+                        <p class="comment-subtitle">We are here to answer all your questions and provide the best consultation</p>
+                    </div>
+                    <div class="comment-form">
+                        <textarea 
+                            id="commentTextAboutEn" 
+                            class="comment-textarea" 
+                            placeholder="Write your question, opinion, or comment here... We are always at your service"
+                        ></textarea>
+                        <button type="button" class="comment-submit-btn" onclick="sendToWhatsAppAboutEn()">
+                            <i class="fab fa-whatsapp"></i>
+                            Send via WhatsApp
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1228,6 +1534,96 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="blog-header" data-aos="fade-up">
+                <h2 class="section-title">📝 Building Materials Blog</h2>
+                <p class="section-description">Valuable tips and information about construction materials and best practices in the world of construction</p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <!-- Blog 1 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image-wrapper">
+                        <img src="images/اسمنت بورتلاندي عادي.jpg" alt="Mubassit Al-Shamal Cement" class="blog-image">
+                        <div class="blog-overlay"></div>
+                        <span class="blog-category">Cement</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Mubassit Al-Shamal Cement: Quality & Strength</h3>
+                        <p class="blog-excerpt">We offer all types of cement: ordinary Portland, white for finishing, and moisture-resistant. All with high quality and competitive prices.</p>
+                        <a href="https://wa.me/966503729380?text=I%20would%20like%20to%20inquire%20about%20cement%20types" target="_blank" class="blog-read-more">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image-wrapper">
+                        <img src="images/بلك.jpg" alt="Concrete Blocks" class="blog-image">
+                        <div class="blog-overlay"></div>
+                        <span class="blog-category">Blocks</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Concrete Blocks in All Sizes</h3>
+                        <p class="blog-excerpt">We offer concrete blocks in all sizes: 20×20×40 cm, 15×20×40 cm, 10×20×40 cm. Excellent quality with fast delivery.</p>
+                        <a href="https://wa.me/966503729380?text=I%20would%20like%20to%20inquire%20about%20concrete%20blocks" target="_blank" class="blog-read-more">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image-wrapper">
+                        <img src="images/بلاط بجميع انواعة.jpg" alt="Tiles and Ceramics" class="blog-image">
+                        <div class="blog-overlay"></div>
+                        <span class="blog-category">Tiles & Ceramics</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Modern Tiles and Ceramics</h3>
+                        <p class="blog-excerpt">Huge collection of tiles and ceramics for floors and walls. Modern designs and high-quality materials for all tastes.</p>
+                        <a href="https://wa.me/966503729380?text=I%20would%20like%20to%20inquire%20about%20tiles%20and%20ceramics" target="_blank" class="blog-read-more">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog 4 -->
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image-wrapper">
+                        <img src="images/رمل احمر.jpg" alt="Sand and Gravel" class="blog-image">
+                        <div class="blog-overlay"></div>
+                        <span class="blog-category">Sand & Gravel</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">High Quality Sand and Gravel</h3>
+                        <p class="blog-excerpt">We provide washed and sieved sand and gravel with excellent quality for all concrete and construction work. Immediate delivery to your project site.</p>
+                        <a href="https://wa.me/966503729380?text=I%20would%20like%20to%20inquire%20about%20sand%20and%20gravel" target="_blank" class="blog-read-more">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Comments and Questions Section -->
+            <div class="blog-comment-section" data-aos="fade-up" data-aos-delay="100">
+                <div class="comment-header">
+                    <h3 class="comment-title">💬 Share Your Opinion or Question</h3>
+                    <p class="comment-subtitle">We are here to answer all your questions and provide the best consultation</p>
+                </div>
+                <div class="comment-form">
+                    <textarea 
+                        id="commentTextEn" 
+                        class="comment-textarea" 
+                        placeholder="Write your question, opinion, or comment here... We are always at your service"
+                    ></textarea>
+                    <button type="button" class="comment-submit-btn" onclick="sendToWhatsAppEn()">
+                        <i class="fab fa-whatsapp"></i>
+                        Send via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Developers Section - 3D Design -->
     <section class="developers" id="developers">
         <div class="container">
@@ -1404,8 +1800,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 All Rights Reserved - Mubassit Al-Shamal Building Materials Complex</p>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
+                    <a href="privacy-en.html">Privacy Policy</a>
+                    <a href="terms-en.html">Terms of Use</a>
                     <a href="#developers">Development Team</a>
                 </div>
             </div>
@@ -1415,5 +1811,96 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script-en.js"></script>
+    
+    <script>
+    function sendToWhatsAppEn() {
+        const comment = document.getElementById('commentTextEn').value.trim();
+        if (comment === '') {
+            alert('Please write a comment or question before sending');
+            return;
+        }
+        const whatsappNumber = '966503729380';
+        const message = encodeURIComponent(comment);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank');
+        document.getElementById('commentTextEn').value = '';
+    }
+    
+    function sendToWhatsAppAboutEn() {
+        const comment = document.getElementById('commentTextAboutEn').value.trim();
+        if (comment === '') {
+            alert('Please write a comment or question before sending');
+            return;
+        }
+        const whatsappNumber = '966503729380';
+        const message = encodeURIComponent(comment);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank');
+        document.getElementById('commentTextAboutEn').value = '';
+    }
+    
+    // Hero Image Slider
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        // Change image every 4 seconds
+        setInterval(showNextSlide, 4000);
+    });
+    
+    // Order product function (without sizes)
+    function orderProduct(productName, quantityId) {
+        const quantity = document.getElementById(quantityId).value;
+        if (!quantity || quantity < 1) {
+            alert('Please enter quantity');
+            return;
+        }
+        
+        const whatsappNumber = '966503729380';
+        const message = `Hello\n\nI would like to order:\n📦 Product: ${productName}\n🔢 Quantity: ${quantity}\n\nThank you`;
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+    }
+    
+    // Order product with size function
+    function orderProductWithSize(productName, quantityId, sizeId) {
+        const quantity = document.getElementById(quantityId).value;
+        const size = document.getElementById(sizeId).value;
+        
+        if (!quantity || quantity < 1) {
+            alert('Please enter quantity');
+            return;
+        }
+        
+        const whatsappNumber = '966503729380';
+        const message = `Hello\n\nI would like to order:\n📦 Product: ${productName}\n📏 Size: ${size}\n🔢 Number of loads: ${quantity}\n\nThank you`;
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+    }
+    
+    // Share product function
+    function shareProduct(productName, productDescription) {
+        const shareText = `🏗️ ${productName}\n\n${productDescription}\n\n📞 Order: https://wa.me/966503729380`;
+        
+        if (navigator.share) {
+            navigator.share({
+                title: productName,
+                text: shareText
+            }).catch(err => console.log('Error sharing:', err));
+        } else {
+            navigator.clipboard.writeText(shareText).then(() => {
+                alert('Product info copied! You can share it now');
+            }).catch(() => {
+                alert('Error sharing');
+            });
+        }
+    }
+    </script>
 </body>
 </html>

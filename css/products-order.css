@@ -1,0 +1,245 @@
+/* تنسيقات حقول الطلب والمشاركة للمنتجات */
+
+/* تحسين وضوح النصوص عند التمرير على البطاقة */
+.product-card-enhanced:hover .product-title-enhanced {
+    color: #000000 !important;
+    text-shadow: none !important;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.product-card-enhanced:hover .product-description-enhanced {
+    color: #1a1a1a !important;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1.8;
+    text-shadow: none !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.product-card-enhanced:hover .spec-item {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #000000 !important;
+    transition: all 0.3s ease;
+}
+
+.product-card-enhanced:hover .spec-item span {
+    color: #000000 !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+.product-card-enhanced:hover .spec-item i {
+    color: #d4af37 !important;
+}
+
+.product-card-enhanced:hover .feature-tag {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #000000 !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+    border: 2px solid #d4af37;
+    transition: all 0.3s ease;
+}
+
+.product-card-enhanced:hover .feature-tag i {
+    color: #d4af37 !important;
+}
+
+.product-card-enhanced:hover .product-number {
+    background: rgba(255, 255, 255, 0.95);
+    color: #000000 !important;
+    font-weight: 800 !important;
+    border: 3px solid #d4af37;
+    transition: all 0.3s ease;
+}
+
+/* قسم الكمية */
+.product-quantity-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quantity-label,
+.size-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 12px;
+    text-shadow: none;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.quantity-label i,
+.size-label i {
+    font-size: 1.1rem;
+}
+
+.quantity-input {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(212, 175, 55, 0.6);
+    border-radius: 12px;
+    color: #000000;
+    font-size: 1.15rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.quantity-input:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.quantity-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 600;
+}
+
+/* قسم الأحجام */
+.product-size-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.size-select {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(212, 175, 55, 0.6);
+    border-radius: 12px;
+    color: #000000;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4af37' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 18px center;
+    padding-left: 45px;
+    text-align: center;
+}
+
+.size-select:focus {
+    outline: none;
+    border-color: #d4af37;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.size-select option {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px;
+    font-weight: 600;
+}
+
+/* أزرار الطلب والمشاركة */
+.product-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.order-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #25D366, #128C7E) !important;
+    padding: 16px 28px !important;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.order-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+}
+
+.product-btn-share {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.product-btn-share:hover {
+    transform: translateY(-3px) rotate(15deg);
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.5);
+    background: linear-gradient(135deg, #2980b9, #3498db);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .quantity-input,
+    .size-select {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+    
+    .product-actions {
+        flex-direction: row;
+    }
+    
+    .order-btn {
+        padding: 12px 20px !important;
+        font-size: 0.9rem;
+    }
+    
+    .product-btn-share {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-quantity-section,
+    .product-size-section {
+        padding: 12px;
+        margin: 15px 0;
+    }
+    
+    .quantity-label,
+    .size-label {
+        font-size: 0.85rem;
+    }
+    
+    .order-btn span {
+        font-size: 0.85rem;
+    }
+}

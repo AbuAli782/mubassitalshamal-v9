@@ -402,6 +402,161 @@
     transform: translateX(-5px);
 }
 
+/* تنسيق الصورة الخرافية */
+.about-hero-image {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.image-wrapper-luxury {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(212, 175, 55, 0.3);
+    transition: all 0.5s ease;
+}
+
+.image-wrapper-luxury:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(212, 175, 55, 0.5);
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.image-wrapper-luxury:hover .hero-img {
+    transform: scale(1.05);
+}
+
+.image-overlay-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.2) 0%,
+        rgba(52, 152, 219, 0.1) 50%,
+        rgba(155, 89, 182, 0.15) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.image-wrapper-luxury:hover .image-overlay-glow {
+    opacity: 1;
+}
+
+.image-border-animated {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 32px;
+    background: linear-gradient(
+        45deg,
+        #d4af37,
+        #3498db,
+        #9b59b6,
+        #d4af37
+    );
+    background-size: 300% 300%;
+    animation: borderGlow 4s ease infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.image-wrapper-luxury:hover .image-border-animated {
+    opacity: 0.6;
+}
+
+@keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* تنسيق قائمة الأهداف المحسنة */
+.goals-list-enhanced {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.goal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.goal-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateX(-5px);
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.2),
+        -5px 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.goal-icon {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.goal-icon i {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.goal-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.goal-text strong {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #d4af37;
+    line-height: 1.4;
+    display: block;
+}
+
+.goal-text span {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .about-title-luxury {
@@ -445,6 +600,32 @@
         align-items: center;
         text-align: center;
     }
+    
+    .image-wrapper-luxury {
+        border-radius: 20px;
+    }
+    
+    .goal-item {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .goal-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .goal-icon i {
+        font-size: 1.1rem;
+    }
+    
+    .goal-text strong {
+        font-size: 1.15rem;
+    }
+    
+    .goal-text span {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -454,5 +635,38 @@
     
     .dec-line {
         width: 40px;
+    }
+    
+    .about-hero-image {
+        margin-bottom: 40px;
+    }
+    
+    .image-wrapper-luxury {
+        border-radius: 15px;
+    }
+    
+    .goal-item {
+        padding: 15px;
+        gap: 12px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .goal-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .goal-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .goal-text strong {
+        font-size: 1.1rem;
+    }
+    
+    .goal-text span {
+        font-size: 0.95rem;
     }
 }

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="شروط الاستخدام - مبسط الشمال لمواد البناء">
+    <title>شروط الاستخدام - مبسط الشمال</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        .update-date {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-right: 4px solid #d4af37;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h2 i {
+            font-size: 1.5rem;
+        }
+
+        .section h3 {
+            color: #f5d772;
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+        }
+
+        .section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .section ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .section ul li {
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-right: 3px solid #d4af37;
+            transition: all 0.3s ease;
+        }
+
+        .section ul li:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(-5px);
+        }
+
+        .section ul li i {
+            color: #d4af37;
+            margin-left: 10px;
+        }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .highlight-box strong {
+            color: #f5d772;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-section h3 {
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .contact-item i {
+            color: #d4af37;
+            font-size: 1.3rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #d4af37, #f5d772);
+            color: #1a1a2e;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section h2 {
+                font-size: 1.4rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-file-contract"></i> شروط الاستخدام</h1>
+            <p>مبسط الشمال لمواد البناء</p>
+        </div>
+
+        <div class="update-date">
+            <i class="fas fa-calendar-alt"></i> آخر تحديث: أكتوبر 2025
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-info-circle"></i> 1. مقدمة</h2>
+            <p>مرحباً بك في موقع <strong>مبسط الشمال لمواد البناء</strong>. باستخدامك لهذا الموقع، فإنك توافق على الالتزام بشروط الاستخدام التالية. يرجى قراءة هذه الشروط بعناية قبل استخدام الموقع.</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-check-circle"></i> 2. قبول الشروط</h2>
+            <p>باستخدامك لهذا الموقع، فإنك تقر بأنك قرأت وفهمت ووافقت على الالتزام بجميع الشروط والأحكام الواردة في هذه الوثيقة. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام الموقع.</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-shopping-cart"></i> 3. استخدام الموقع</h2>
+            <h3>3.1 الاستخدام المسموح</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> تصفح المنتجات والخدمات المتاحة</li>
+                <li><i class="fas fa-check"></i> طلب المنتجات عبر واتساب أو الاتصال المباشر</li>
+                <li><i class="fas fa-check"></i> الاستفسار عن الأسعار والمواصفات</li>
+                <li><i class="fas fa-check"></i> قراءة المحتوى التعليمي والإرشادي</li>
+            </ul>
+
+            <h3>3.2 الاستخدام غير المسموح</h3>
+            <ul>
+                <li><i class="fas fa-times"></i> نسخ أو إعادة نشر محتوى الموقع دون إذن</li>
+                <li><i class="fas fa-times"></i> استخدام الموقع لأغراض غير قانونية</li>
+                <li><i class="fas fa-times"></i> محاولة اختراق أو تعطيل الموقع</li>
+                <li><i class="fas fa-times"></i> إرسال محتوى ضار أو مسيء</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-boxes"></i> 4. المنتجات والأسعار</h2>
+            <div class="highlight-box">
+                <p><strong>ملاحظة هامة:</strong> جميع المعلومات المتعلقة بالمنتجات والأسعار المعروضة على الموقع هي لأغراض إعلامية فقط وقابلة للتغيير دون إشعار مسبق.</p>
+            </div>
+            <ul>
+                <li><i class="fas fa-tag"></i> الأسعار المعروضة إرشادية وقد تتغير حسب السوق</li>
+                <li><i class="fas fa-box"></i> التوفر الفعلي للمنتجات يتم التأكد منه عند الطلب</li>
+                <li><i class="fas fa-truck"></i> تكاليف التوصيل تحدد حسب الموقع والكمية</li>
+                <li><i class="fas fa-certificate"></i> نضمن جودة جميع منتجاتنا وفق المواصفات القياسية</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-clipboard-list"></i> 5. عملية الطلب</h2>
+            <p>يمكنك طلب المنتجات عبر:</p>
+            <ul>
+                <li><i class="fab fa-whatsapp"></i> <strong>واتساب:</strong> 966503729380</li>
+                <li><i class="fas fa-phone"></i> <strong>الاتصال المباشر:</strong> متاح خلال أوقات العمل</li>
+            </ul>
+            <p>أوقات العمل: السبت - الخميس من 6:00 صباحاً - 8:00 مساءً</p>
+            <div class="highlight-box">
+                <p><strong>تنبيه:</strong> الطلبات التي تتم عبر واتساب أو الهاتف تخضع للتأكيد من قبل فريقنا، ويتم الاتفاق على التفاصيل النهائية (السعر، الكمية، موعد التسليم) قبل التنفيذ.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-truck-loading"></i> 6. التوصيل والاستلام</h2>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> نوفر خدمة التوصيل لمعظم المناطق</li>
+                <li><i class="fas fa-clock"></i> مدة التوصيل تحدد حسب الموقع والكمية</li>
+                <li><i class="fas fa-handshake"></i> يجب فحص المنتجات عند الاستلام</li>
+                <li><i class="fas fa-exclamation-triangle"></i> يجب إبلاغنا فوراً بأي مشكلة في المنتجات</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-exchange-alt"></i> 7. سياسة الاسترجاع والاستبدال</h2>
+            <ul>
+                <li><i class="fas fa-undo"></i> نقبل الاسترجاع في حالة العيوب المصنعية فقط</li>
+                <li><i class="fas fa-calendar-check"></i> يجب الإبلاغ عن أي عيب خلال 48 ساعة من الاستلام</li>
+                <li><i class="fas fa-box-open"></i> المنتجات يجب أن تكون في حالتها الأصلية</li>
+                <li><i class="fas fa-ban"></i> لا يمكن استرجاع المنتجات المخصصة أو المقطوعة حسب الطلب</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-shield-alt"></i> 8. المسؤولية</h2>
+            <p>مبسط الشمال لمواد البناء غير مسؤول عن:</p>
+            <ul>
+                <li><i class="fas fa-tools"></i> أخطاء الاستخدام أو التركيب من قبل العميل</li>
+                <li><i class="fas fa-warehouse"></i> التلف الناتج عن سوء التخزين</li>
+                <li><i class="fas fa-ban"></i> الأضرار غير المباشرة أو التبعية</li>
+                <li><i class="fas fa-hourglass-half"></i> التأخير في التسليم بسبب ظروف خارجة عن إرادتنا</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-user-shield"></i> 9. الخصوصية وحماية البيانات</h2>
+            <p>نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. المعلومات التي نجمعها تستخدم فقط لتنفيذ طلباتك والتواصل معك.</p>
+            <div class="highlight-box">
+                <p><strong>نضمن لك:</strong></p>
+                <ul>
+                    <li><i class="fas fa-lock"></i> عدم مشاركة بياناتك مع أطراف ثالثة</li>
+                    <li><i class="fas fa-database"></i> تخزين آمن لمعلوماتك</li>
+                    <li><i class="fas fa-user-check"></i> استخدام بياناتك فقط للأغراض المتفق عليها</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-copyright"></i> 10. الملكية الفكرية</h2>
+            <p>جميع المحتويات الموجودة على هذا الموقع (نصوص، صور، تصاميم، شعارات) هي ملكية خاصة لمبسط الشمال لمواد البناء وتخضع لحماية حقوق الملكية الفكرية.</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-edit"></i> 11. تعديل الشروط</h2>
+            <p>نحتفظ بالحق في تعديل هذه الشروط في أي وقت. التعديلات تصبح سارية فور نشرها على الموقع. استمرارك في استخدام الموقع يعني موافقتك على الشروط المعدلة.</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-balance-scale"></i> 12. القانون الحاكم</h2>
+            <p>تخضع هذه الشروط وتفسر وفقاً لأنظمة المملكة العربية السعودية.</p>
+        </div>
+
+        <div class="contact-section">
+            <h3><i class="fas fa-headset"></i> للاستفسار عن شروط الاستخدام</h3>
+            <p>إذا كان لديك أي سؤال أو استفسار حول شروط الاستخدام، لا تتردد في التواصل معنا:</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>966503729380</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>السبت - الخميس: 6:00 ص - 8:00 م</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                العودة للصفحة الرئيسية
+            </a>
+        </div>
+    </div>
+</body>
+</html>
