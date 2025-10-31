@@ -496,7 +496,7 @@ html[dir="rtl"] .blog-badge-new {
 
 .blog-comment-section {
     margin-top: 80px;
-    padding: 50px;
+    padding: 40px;
     background: white;
     border-radius: 25px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -531,11 +531,13 @@ html[dir="rtl"] .blog-badge-new {
     font-weight: 800;
     color: #2c3e50;
     margin-bottom: 10px;
+    line-height: 1.4;
 }
 
 .comment-subtitle {
     font-size: 1.1rem;
     color: #666;
+    line-height: 1.6;
 }
 
 .comment-form {
@@ -554,6 +556,8 @@ html[dir="rtl"] .blog-badge-new {
     resize: vertical;
     transition: all 0.3s ease;
     background: #f9f9f9;
+    box-sizing: border-box;
+    line-height: 1.6;
 }
 
 .comment-textarea:focus {
@@ -604,50 +608,112 @@ html[dir="rtl"] .blog-badge-new {
 
 @media (max-width: 768px) {
     .blog-comment-section {
-        margin-top: 60px;
-        padding: 35px 25px;
+        margin-top: 50px;
+        padding: 30px 20px;
         border-radius: 20px;
     }
     
+    .comment-header {
+        margin-bottom: 25px;
+    }
+    
     .comment-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     
     .comment-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
     
     .comment-textarea {
-        min-height: 120px;
-        padding: 15px;
+        min-height: 130px;
+        padding: 16px;
         font-size: 0.95rem;
+        border-radius: 12px;
     }
     
     .comment-submit-btn {
         width: 100%;
         justify-content: center;
-        padding: 14px 30px;
+        padding: 15px 30px;
         font-size: 1rem;
     }
 }
 
 @media (max-width: 576px) {
     .blog-comment-section {
-        margin-top: 50px;
-        padding: 25px 15px;
-        border-radius: 18px;
+        margin-top: 40px;
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+    
+    .comment-header {
+        margin-bottom: 20px;
     }
     
     .comment-title {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+        line-height: 1.3;
     }
     
     .comment-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .comment-textarea {
+        min-height: 110px;
+        padding: 14px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+    
+    .comment-submit-btn {
+        padding: 14px 25px;
         font-size: 0.95rem;
+    }
+    
+    .comment-submit-btn i {
+        font-size: 1.2rem;
+    }
+}
+
+/* شاشات صغيرة جداً */
+@media (max-width: 400px) {
+    .blog-comment-section {
+        margin-top: 35px;
+        padding: 18px 12px;
+        border-radius: 12px;
+    }
+    
+    .comment-header {
+        margin-bottom: 18px;
+    }
+    
+    .comment-title {
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+    
+    .comment-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.4;
     }
     
     .comment-textarea {
         min-height: 100px;
         padding: 12px;
+        font-size: 0.88rem;
+    }
+    
+    .comment-submit-btn {
+        padding: 13px 20px;
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+    
+    .comment-submit-btn i {
+        font-size: 1.1rem;
     }
 }
