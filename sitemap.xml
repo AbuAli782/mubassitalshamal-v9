@@ -1,15 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+    <!-- Arabic Homepage -->
     <url>
-        <loc>https://www.mubassit-alshamal.com/index.html</loc>
-        <lastmod>2025-10-30</lastmod>
+        <loc>https://mubassitalshamal-v9.onrender.com/index.html</loc>
+        <lastmod>2025-11-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <mobile:mobile/>
     </url>
+    <!-- English Homepage -->
     <url>
-        <loc>https://www.mubassit-alshamal.com/index-en.html</loc>
-        <lastmod>2025-10-30</lastmod>
+        <loc>https://mubassitalshamal-v9.onrender.com/index-en.html</loc>
+        <lastmod>2025-11-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <mobile:mobile/>
+    </url>
+    <!-- Arabic Privacy Policy -->
+    <url>
+        <loc>https://mubassitalshamal-v9.onrender.com/privacy-ar.html</loc>
+        <lastmod>2025-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile/>
+    </url>
+    <!-- English Privacy Policy -->
+    <url>
+        <loc>https://mubassitalshamal-v9.onrender.com/privacy-en.html</loc>
+        <lastmod>2025-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile/>
+    </url>
+    <!-- Arabic Terms and Conditions -->
+    <url>
+        <loc>https://mubassitalshamal-v9.onrender.com/terms-ar.html</loc>
+        <lastmod>2025-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile/>
+    </url>
+    <!-- English Terms and Conditions -->
+    <url>
+        <loc>https://mubassitalshamal-v9.onrender.com/terms-en.html</loc>
+        <lastmod>2025-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile/>
     </url>
 </urlset>

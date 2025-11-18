@@ -1,6 +1,19 @@
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /index-en.html
+Allow: /privacy-ar.html
+Allow: /privacy-en.html
+Allow: /terms-ar.html
+Allow: /terms-en.html
 Disallow: /admin/
 Disallow: /private/
+Disallow: /*.json$
+Disallow: /node_modules/
 
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://mubassitalshamal-v9.onrender.com/sitemap.xml
 Sitemap: https://www.mubassit-alshamal.com/sitemap.xml
